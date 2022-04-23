@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from "react";
 
-function App() {
+export const App = () => {
+  const [students, setStudents] = useState([]);
+  const [student, setStudent] = useState({})
+  const STUDENTS_API_URL = 'http://localhost:8000/api/students';
+
+  useEffect( () => {
+      fetch(STUDENTS_API_URL).then(res => res.json()).then(data => setStudent(data[0]));
+  }, []);
+  console.log(students);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div>
+        <h1>asjfl;sdf</h1>
+        <h2>{student.email}</h2>
+      </div>
+  )
 }
 
-export default App;
+
