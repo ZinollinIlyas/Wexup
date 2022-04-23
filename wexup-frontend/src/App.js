@@ -1,20 +1,11 @@
 import {useState, useEffect} from "react";
+import {Navbar} from "./components/Navbar/navbar";
 
 export const App = () => {
-  const [students, setStudents] = useState([]);
-  const [student, setStudent] = useState({})
-  const STUDENTS_API_URL = 'http://localhost:8000/api/students';
+    return (
+        <Navbar/>
+    )
 
-  useEffect( () => {
-      fetch(STUDENTS_API_URL).then(res => res.json()).then(data => setStudent(data[0]));
-  }, []);
-  console.log(students);
-  return (
-      <div>
-        <h1>asjfl;sdf</h1>
-        <h2>{student.email}</h2>
-      </div>
-  )
 }
 
 
