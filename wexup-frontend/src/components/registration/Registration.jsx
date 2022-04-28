@@ -55,29 +55,31 @@ const Registration = () =>
                                 Ваше полное имя
                             </div>
                             <div className="name-input">
-                                <input placeholder="Введите вашe ФИО" className="name-input-content"/>
+                                <input placeholder="Введите вашe Имя и Фамилию" className="name-input-content"/>
                             </div>
                         </div>
-                        <div className="form-name">
-                            <div className="name-desc">
-                                Адрес электронной почты
+                        <div className="second-form">
+                            <div className="form-name">
+                                <div className="name-desc">
+                                    Адрес электронной почты
+                                </div>
+                                <div className="name-input">
+                                    <input placeholder="Введите ваш email" className="name-second-content name-email"/>
+                                </div>
                             </div>
-                            <div className="name-input">
-                                <input placeholder="Введите ваш e-mail" className="name-input-content"/>
-                            </div>
-                        </div>
-                        <div className="form-name">
-                            <div className="name-desc">
-                                Пароль
-                            </div>
-                            <div className="name-input">
-                                <input type="password" placeholder="Введите пароль" className="name-input-content"/>
+                            <div className="form-name form-name-password">
+                                <div className="name-desc">
+                                    Пароль
+                                </div>
+                                <div className="name-input">
+                                    <input type="password" placeholder="Введите пароль" className="name-second-content"/>
+                                </div>
                             </div>
                         </div>
                         <div className="form-button">
-                            <button className="form-button-content">
-                                ДАЛЕЕ
-                            </button>
+                                <a href="/registration/step2" className="form-button-content">
+                                    ДАЛЕЕ
+                                </a>
                         </div>
                         <div className="line-down">
                             <img src={linedown} alt="line-down"/>

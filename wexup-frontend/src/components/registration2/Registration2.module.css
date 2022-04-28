@@ -1,26 +1,29 @@
 
-
 a {
     text-decoration: none;
 }
 /*header*/
 .header {
-
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 500px;
     margin-left: 100px;
-    margin-bottom: 89px;
+    margin-bottom: 99px;
 }
-.img-logo {
+.imgLogo {
+
     margin-right: 395px;
 }
-.logo-complete {
+.imgPerson {
+    padding-top: 120px;
+    margin-right: 194px;
+}
+.logoComplete {
 
     margin-right: 25px;
 }
-.logo-empty:not(:last-child){
+.logoEmpty:not(:last-child){
 
     margin-right: 25px;
 }
@@ -32,15 +35,15 @@ a {
     display: flex;
     justify-content: center;
 }
-.google-img {
+.googleImg {
     margin-right: 10px;
 }
-.google-link {
+.googleLink {
     color: #4B91ED;
     font-weight: 500;
     font-size: 16px;
 }
-.google-btn{
+.googleBtn{
     display: flex;
     align-items: center;
     border: 1px solid #4B91ED;
@@ -48,71 +51,79 @@ a {
     padding: 7px 190px 7px 163px;
     margin-bottom: 28px;
 }
-.form-or {
+.formOr {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
-.form-or-content:not(:last-child) {
+.formOrContent:not(:last-child) {
     margin-right: 27px;
 }
-.form-or-line {
+.formOrLine {
     margin-bottom: 5px;
 }
-.form-name {
-    margin-bottom: 38px;
+.formName {
+    margin-bottom: 30px;
 }
-.name-desc {
+.nameDesc {
     margin-bottom: 17px;
 }
-.name-input-content {
-    min-width: 553px;
-    padding: 14px 0px 14px 24px;
-    border: 1px solid #C4C4C4;
-    border-radius: 4px;
-
-}
-.name-second-content {
-    min-width: 248px;
-    padding: 14px 0px 14px 5px;
+.nameInputContent {
+    min-width: 530px;
+    padding: 14px 0 14px 24px;
     border: 1px solid #C4C4C4;
     border-radius: 4px;
 }
-
-.second-form {
+.secondForm {
     display: flex;
     justify-content: space-between;
 }
+.secondInput {
+    padding: 13px 0 13px 24px;
+    min-width: 208px;
+}
+.formBtns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 114px;
+    margin-top: 50px;
+}
+.firstButtonContent {
+    padding:13px 40px;
+    background: transparent;
+    border:1px solid #CBCBCB;
+    border-radius: 4px;
+    color: #CBCBCB;
+    cursor: pointer;
+}
+.secondButtonContent {
+    padding:13px 40px;
+    background: #D3A6E9;
+    border:1px solid #D3A6E9;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
 
-.form-button-content:active {
+}
+.firstButtonContent:active {
+    border-color:  #696969;
+}
+.secondButtonContent:active {
     border:none;
     transition-duration: 0.8s;
 }
-.form-button {
-    display: flex;
-    margin-bottom: 50px;
-    justify-content: center;
-}
-.form-button-content {
-    padding: 13px 40px;
-    border: 1px solid #D3A6E9;
-    background: #D3A6E9;
-    color: #FFFFFF;
-    border-radius: 4px;
-}
-
-.line-down {
+.lineDown {
     text-align: center;
     margin-bottom: 31px;
 }
-.form-down-text {
+.formDownText {
     text-align: center;
     margin-bottom: 18px;
 }
-.form-come {
+.formCome {
     text-align: center;
 }
-.down-link {
+.downLink {
     color:#9400DA;
 }

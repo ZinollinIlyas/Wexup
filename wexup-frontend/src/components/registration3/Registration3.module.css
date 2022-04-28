@@ -1,0 +1,95 @@
+
+a {
+    text-decoration: none;
+}
+/*header*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 335px 46px 100px;
+}
+.imgLogo {
+    margin-right: 230px;
+}
+.imgPerson {
+    padding-top: 120px;
+    margin-right: 194px;
+}
+.logoComplete {
+
+    margin-right: 25px;
+}
+.logoEmpty:not(:last-child){
+    margin-right: 25px;
+}
+.firstButtonContent {
+    padding:13px 40px;
+    margin-right: 48px;
+    background: transparent;
+    border:1px solid #CBCBCB;
+    border-radius: 4px;
+    color: #CBCBCB;
+    cursor: pointer;
+
+}
+.secondButtonContent {
+    padding:13px 40px;
+    background: #D3A6E9;
+    margin-left: 23px;
+    border:1px solid #D3A6E9;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.firstButtonContent:active {
+    border-color:  #696969;
+}
+.secondButtonContent:active {
+    border:none;
+    transition-duration: 0.8s;
+}
+
+/*Main*/
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.male {
+}
+.maleTitle {
+    margin-bottom: 32px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.malePerson {
+    padding:13px 41px;
+    background: transparent;
+    border: 1px solid #C4C4C4;
+    color: #C4C4C4;
+    font-weight: 400;
+    cursor:pointer;
+}
+.profileTitle {
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 21px;
+}
+.profileDesc {
+    font-size: 16px;
+    color: #747474;
+    margin-bottom: 36px;
+}
+.inputFileContent {
+    padding:27px 304px 147px 290px;
+    border: 1px dashed #A7A7A7;
+}
+
+.inputFile
+{
+    margin-bottom: 67px;
+}

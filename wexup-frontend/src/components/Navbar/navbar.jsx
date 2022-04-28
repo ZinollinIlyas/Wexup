@@ -1,8 +1,6 @@
 import React from "react";
 import './navbar.css'
 import logo from '../images/navbar-logo.png'
-import {Routes, Route, BrowserRouter} from "react-router-dom";
-import Registration from "../registration/Registration";
 
 const Navbar = () => {
     return (
@@ -16,7 +14,7 @@ const Navbar = () => {
            <div className="navbar-faq"><a>FAQ</a></div>
            <div className="navbar-entrance"><a>Войти</a></div>
            <div className="navbar-registration">
-               <a className="navbar-registration-btn" href="/registration">
+               <a className="navbar-registration-btn" href="/registration/step1">
                    Регистрация
                </a>
            </div>

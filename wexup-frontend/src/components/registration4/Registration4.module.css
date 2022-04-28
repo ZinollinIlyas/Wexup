@@ -1,0 +1,104 @@
+
+a {
+    text-decoration: none;
+}
+/*header*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 335px 46px 100px;
+}
+.imgLogo {
+    margin-right: 195px;
+}
+.imgPerson {
+    padding-top: 120px;
+    margin-right: 194px;
+}
+.logoComplete {
+
+    margin-right: 25px;
+}
+.logoEmpty:not(:last-child){
+    margin-right: 25px;
+}
+.firstButtonContent {
+    padding:13px 40px;
+    margin-right: 48px;
+    background: transparent;
+    border:1px solid #CBCBCB;
+    border-radius: 4px;
+    color: #CBCBCB;
+    cursor: pointer;
+
+}
+.secondButtonContent {
+    padding:13px 40px;
+    background: #D3A6E9;
+    margin-left: 23px;
+    border:1px solid #D3A6E9;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.firstButtonContent:active {
+    border-color:  #696969;
+}
+.secondButtonContent:active {
+    border:none;
+    transition-duration: 0.8s;
+}
+
+/*Main*/
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.title {
+    margin-bottom: 35px;
+    display: flex;
+    min-width: 600px;
+    flex-direction: column;
+}
+.titleContent {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 21px;
+}
+.titleDesc {
+    font-weight: 400;
+    font-size: 16px;
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+.formContent {
+    display: flex;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+.formContentFirst {
+    padding:11px 32px;
+    border: 1px solid #A7A7A7;
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: #A7A7A7;
+    cursor:pointer;
+}
+.formContentFirst:not(:last-child){
+    margin-right: 19px;
+}
+.formLast {
+    padding: 18px 308px 33px 12px;
+    min-width: 600px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
