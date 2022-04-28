@@ -1,0 +1,129 @@
+
+a {
+    text-decoration: none;
+}
+/*header*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 500px;
+    margin-left: 100px;
+    margin-bottom: 99px;
+}
+.imgLogo {
+
+    margin-right: 395px;
+}
+.imgPerson {
+    padding-top: 120px;
+    margin-right: 194px;
+}
+.logoComplete {
+
+    margin-right: 25px;
+}
+.logoEmpty:not(:last-child){
+
+    margin-right: 25px;
+}
+
+
+/*form*/
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+.googleImg {
+    margin-right: 10px;
+}
+.googleLink {
+    color: #4B91ED;
+    font-weight: 500;
+    font-size: 16px;
+}
+.googleBtn{
+    display: flex;
+    align-items: center;
+    border: 1px solid #4B91ED;
+    border-radius: 4px;
+    padding: 7px 190px 7px 163px;
+    margin-bottom: 28px;
+}
+.formOr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.formOrContent:not(:last-child) {
+    margin-right: 27px;
+}
+.formOrLine {
+    margin-bottom: 5px;
+}
+.formName {
+    margin-bottom: 30px;
+}
+.nameDesc {
+    margin-bottom: 17px;
+}
+.nameInputContent {
+    min-width: 530px;
+    padding: 14px 0 14px 24px;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+}
+.secondForm {
+    display: flex;
+    justify-content: space-between;
+}
+.secondInput {
+    padding: 13px 0 13px 24px;
+    min-width: 208px;
+}
+.formBtns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 114px;
+    margin-top: 50px;
+}
+.firstButtonContent {
+    padding:13px 40px;
+    background: transparent;
+    border:1px solid #CBCBCB;
+    border-radius: 4px;
+    color: #CBCBCB;
+    cursor: pointer;
+}
+.secondButtonContent {
+    padding:13px 40px;
+    background: #D3A6E9;
+    border:1px solid #D3A6E9;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+}
+.firstButtonContent:active {
+    border-color:  #696969;
+}
+.secondButtonContent:active {
+    border:none;
+    transition-duration: 0.8s;
+}
+.lineDown {
+    text-align: center;
+    margin-bottom: 31px;
+}
+.formDownText {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.formCome {
+    text-align: center;
+}
+.downLink {
+    color:#9400DA;
+}
