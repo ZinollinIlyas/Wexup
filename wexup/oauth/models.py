@@ -29,3 +29,8 @@ class Recruiter(models.Model):
 
     def __str__(self):
         return f"{self.email}"
+
+
+# class Vacancy(models.Model):
+#     sdfjl = models.CharField(max_length=60, null=True, blank=True, verbose_name='askldjflksdj')
+#     duties = models.

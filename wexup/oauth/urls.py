@@ -2,8 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
+from .views import StudentsViewSet
+from rest_framework import routers
 
-urlpatterns = [
-    path('students', views.StudentView.as_view())
-]
+router = routers.SimpleRouter()
+router.register(r'students', StudentsViewSet)
+
+urlpatterns = router.urls
+
