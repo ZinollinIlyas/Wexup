@@ -7,6 +7,22 @@ import woman from '../images/picture-women.png'
 import linedown from '../images/Line2.png'
 const Registration2 = () =>
 {
+    const submitStepTwo = (e) => {
+        e.preventDefault();
+
+        const university_field = document.getElementById("student_university").value;
+        const city_field = document.getElementById("student_city").value;
+        const study_period_field = document.getElementById("student_study_period").value;
+        const specialty_field = document.getElementById("student_specialty").value;
+
+        localStorage.setItem("university", university_field);
+        localStorage.setItem("city", city_field);
+        localStorage.setItem("study_period", study_period_field);
+        localStorage.setItem("specialty", specialty_field);
+
+        window.location.replace("/registration/step3");
+
+    }
     return (
         <div>
             <div className={s.header}>
@@ -33,7 +49,7 @@ const Registration2 = () =>
                                 Учебное заведение
                             </div>
                             <div className={s.nameInput}>
-                                <input placeholder="Введите название вашего учебного заведения" className={s.nameInputContent}/>
+                                <input id="student_university" placeholder="Введите название вашего учебного заведения" className={s.nameInputContent}/>
                             </div>
                         </div>
                             <div className={s.secondForm}>
@@ -42,7 +58,7 @@ const Registration2 = () =>
                                         Город
                                     </div>
                                     <div className={s.nameInput}>
-                                        <select name="color" className={s.secondInput}>
+                                        <select id={"student_city"} name="color" className={s.secondInput}>
                                             <option>Алматы</option>
                                             <option>Астана</option>
                                             <option>Караганда</option>
@@ -54,7 +70,7 @@ const Registration2 = () =>
                                         Период обучения
                                     </div>
                                     <div className={s.nameInput}>
-                                        <input type="" placeholder="__ /____ — __ /____" className={s.secondInput}/>
+                                        <input id={"student_study_period"} type="" placeholder="__ /____ — __ /____" className={s.secondInput}/>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +79,7 @@ const Registration2 = () =>
                                 Специальность
                             </div>
                             <div className={s.nameInput}>
-                                <input placeholder="Введите вашу специальность" className={s.nameInputContent}/>
+                                <input id={"student_specialty"} placeholder="Введите вашу специальность" className={s.nameInputContent}/>
                             </div>
                         </div>
                         <div className={s.formBtns}>
@@ -73,7 +89,7 @@ const Registration2 = () =>
                                 </a>
                             </div>
                             <div className={s.secondButton}>
-                                    <a href="/registration/step3" className={s.secondButtonContent}>
+                                    <a className={s.secondButtonContent} onClick={submitStepTwo}>
                                         ДАЛЕЕ
                                     </a>
                             </div>

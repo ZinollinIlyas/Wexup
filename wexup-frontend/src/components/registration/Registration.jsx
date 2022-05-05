@@ -8,8 +8,24 @@ import google from '../images/google.png'
 import line from '../images/Line 14.png'
 import or from '../images/or.png'
 import linedown from '../images/Line2.png'
+import s from "../registration2/Registration2.module.css";
+
+
+
 const Registration = () =>
 {
+    const submitStepOne = (e) => {
+        e.preventDefault();
+
+        const name_field = document.getElementById("student_name").value;
+        const email_field = document.getElementById("student_email").value;
+        const password_field = document.getElementById("student_password").value;
+
+        localStorage.setItem("first_name", name_field);
+        localStorage.setItem("email", email_field);
+        localStorage.setItem("password", password_field);
+        window.location.replace("/registration/step2");
+    };
     return (
         <div>
             <div className="header">
@@ -30,7 +46,7 @@ const Registration = () =>
                     <img src={man} alt="man" className="img-person"/>
                 </div>
                 <div className="form-content">
-                    <form>
+                    <form onSubmit={submitStepOne}>
                         <div className="google-btn">
                             <div className="google-img">
                                 <img src={google} alt="google"/>
@@ -55,7 +71,7 @@ const Registration = () =>
                                 Ваше полное имя
                             </div>
                             <div className="name-input">
-                                <input placeholder="Введите вашe Имя и Фамилию" className="name-input-content"/>
+                                <input id="student_name" placeholder="Введите вашe Имя и Фамилию" className="name-input-content"/>
                             </div>
                         </div>
                         <div className="second-form">
@@ -64,7 +80,7 @@ const Registration = () =>
                                     Адрес электронной почты
                                 </div>
                                 <div className="name-input">
-                                    <input placeholder="Введите ваш email" className="name-second-content name-email"/>
+                                    <input id="student_email"placeholder="Введите ваш email" className="name-second-content name-email"/>
                                 </div>
                             </div>
                             <div className="form-name form-name-password">
@@ -72,13 +88,13 @@ const Registration = () =>
                                     Пароль
                                 </div>
                                 <div className="name-input">
-                                    <input type="password" placeholder="Введите пароль" className="name-second-content"/>
+                                    <input id="student_password" type="password" placeholder="Введите пароль" className="name-second-content"/>
                                 </div>
                             </div>
                         </div>
                         <div className="form-button">
-                                <a href="/registration/step2" className="form-button-content">
-                                    ДАЛЕЕ
+                                <a href="/registration/step3" className={s.secondButtonContent} onClick={submitStepOne}>
+                                        ДАЛЕЕ
                                 </a>
                         </div>
                         <div className="line-down">
