@@ -16,6 +16,7 @@ const Registration3 = () =>
 
         let formData = new FormData();
         formData.append("first_name", localStorage.getItem("first_name"));
+        formData.append("second_name", localStorage.getItem("second_name"));
         formData.append("email", localStorage.getItem("email"));
         formData.append("password", localStorage.getItem("password"));
         formData.append("university", localStorage.getItem("password"));
@@ -24,7 +25,6 @@ const Registration3 = () =>
         formData.append("specialty", localStorage.getItem("specialty"));
         formData.append("avatar", image_field);
         formData.append("resume", resume_field);
-        formData.append("username", "test")
 
         let options = {
             method: "POST",

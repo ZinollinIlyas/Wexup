@@ -18,10 +18,13 @@ const Registration = () =>
         e.preventDefault();
 
         const name_field = document.getElementById("student_name").value;
+        const first_name = name_field.split(' ')[0];
+        const second_name = name_field.split(' ')[1];
         const email_field = document.getElementById("student_email").value;
         const password_field = document.getElementById("student_password").value;
 
-        localStorage.setItem("first_name", name_field);
+        localStorage.setItem("first_name", first_name);
+        localStorage.setItem("second_name", second_name);
         localStorage.setItem("email", email_field);
         localStorage.setItem("password", password_field);
         window.location.replace("/registration/step2");
