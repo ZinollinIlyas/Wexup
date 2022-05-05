@@ -32,7 +32,6 @@ const Registration2 = () =>
                     <div className={s.titleContent}> Предпочитаемая роль </div>
                     <div className={s.titleDesc}>Выберите роли в которых ты заинтересован? До 4 профессий</div>
                 </div>
-
                     <form>
                         <div className={s.form}>
                         <div className={s.formContent}>
