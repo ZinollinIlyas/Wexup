@@ -52,7 +52,7 @@ const Registration3 = () =>
                     <img src={emptyreg} alt="empty-reg" className={s.logoEmpty}/>
                     <img src={emptyreg} alt="empty-reg" className={s.logoEmpty}/>
                      <a href="/registration/step4" className={s.secondButtonContent} onClick={submitStepThree}>
-                         ДАЛЕЕ
+                         Завершить
                      </a>
                 </div>
             </div>

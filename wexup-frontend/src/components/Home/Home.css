@@ -1,9 +1,38 @@
 
 .homePage {
-}
-.homePic {
     display: flex;
-    z-index: 0;
-    margin: 0 auto;
-    min-width: 300px;
+}
+.sidebar_name {
+    min-width:300px;
+    background: #E0E0E0;
+
+}
+.sidebar_submenu,.sub-submenu-list {
+    margin-top: 10px;
+}
+.sidebar_menu li {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 20px;
+}
+.submenu_checkbox_list {
+    display: flex;
+}
+.sidebar_menu_list li {
+    margin-bottom: 25px;
+}
+.sidebar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.sidebar_arrow {
+    margin-left: 5px;
+}
+
+.sidebar_salary_number {
+    padding:10px 12px;
+    background: transparent;
 }
