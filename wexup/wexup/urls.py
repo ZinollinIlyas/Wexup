@@ -19,12 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/', include('oauth.urls'))
+    path('api/users/', include('oauth.urls')),
+    path('api/vacancies/', include('vacancy.urls'))
 ]
 
 if settings.DEBUG:

@@ -6,17 +6,13 @@ import arrow from "../images/Arrow 1.svg";
 import arrowRight from "../images/ArrowRight.svg";
 import {useForm} from "react-hook-form";
 const Home = () => {
+
     const [show,setShow] = useState(false);
     const [show2,setShow2] = useState(false);
     const [show3,setShow3] = useState(false);
     const [show4,setShow4] = useState(false);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const selectAll = watch('selectAll');
-
-
-
-
-
 
     return (
         <div className="homePage">
