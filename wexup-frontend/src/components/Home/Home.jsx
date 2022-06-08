@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import Vacancies from "../Vacancies/Vacancies";
 import "./Home.css"
-import logo from "../images/logo-form.png";
 import arrow from "../images/Arrow 1.svg";
 import arrowRight from "../images/ArrowRight.svg";
 import {useForm} from "react-hook-form";
@@ -12,102 +11,90 @@ const Home = () => {
     const [show4,setShow4] = useState(false);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const selectAll = watch('selectAll');
-
-
-
-
-
+    const [value,setValue] = useState('')
 
     return (
         <div className="homePage">
             <div className="sidebar_name">
-               <div className="sidebar_img">
-                   <img src={logo}/>
-               </div>
-                <div className="sidebar_search">
-
+                <div className="sidebarSearch">
+                    <h2 className="sidebar_title">
+                        Условия поиска
+                    </h2>
                 </div>
                 <div className="sidebar_filter">
                     <nav className="sidebar_menu">
                         <ul className="sidebar_menu_list">
                             <li>
-                                <a onClick={()=> setShow(!show)} className="sidebar-link">
-                                    Специальность
-                                    {
-                                        show ?
-                                        <img className="sidebar_arrow" src={arrow}/>:
-                                        <img className="sidebar_arrow" src={arrowRight}/>
-                                    }
-
-                                </a>
                                 {
-                                    show &&
                                     <ul className="sidebar_submenu">
-                                    <li>
-                                        <div className="submenu_checkbox_list">
-                                            <input type="checkbox"/>
-                                            <div>
-                                                Информационные технологии
+                                        <div className="sidebar-link" onClick={()=> setShow2(!show2)}>
+                                                Направление
                                                 {
                                             show2 ?
                                         <img onClick={()=> setShow2(!show2)} className="sidebar_arrow" src={arrow}/>:
                                         <img onClick={()=> setShow2(!show2)} className="sidebar_arrow" src={arrowRight}/>
                                     }
-                                            </div>
                                         </div>
                                         {
                                             show2 &&
-                                            <ul className="sub-submenu-list">
-                                               <li>
-                                                    <input type="checkbox"/>
-                                                  Аналитик
+                                            <ul className="submenu-list">
+                                               <li className="sidebar-link">
+                                                   <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Аналитика
+                                                   </div>
                                                </li>
-                                                 <li>
-                                                    <input type="checkbox"/>
-                                                    Дизайнер
+                                                 <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      UX/UI дизайн
+                                                   </div>
                                                </li>
-                                                <li>
-                                                    <input type="checkbox"/>
-                                                    Менеджер продукта
+                                                <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Проектный/продуктовый менеджмент
+                                                   </div>
                                                 </li>
-                                                <li>
-                                                    <input type="checkbox"/>
-                                                    Программист
+                                                <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Разработка
+                                                   </div>
                                                 </li>
-                                                 <li>
-                                                    <input type="checkbox"/>
-                                                    Сетевой инженер
+                                                 <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Системное администрирование
+                                                   </div>
                                                 </li>
-                                                <li>
-                                                    <input type="checkbox"/>
-                                                    Системный Администратор
+                                                <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Техническая поддержка
+                                                   </div>
                                                 </li>
-                                                <li>
-                                                    <input type="checkbox"/>
-                                                    Специалист технической поддержки
-                                                </li>
-                                                 <li>
-                                                    <input type="checkbox"/>
-                                                    Тестировщик
+                                                <li className="sidebar-link">
+                                                    <div className="linkFirst">
+                                                        <input type="checkbox"/>
+                                                      Тестирование
+                                                   </div>
                                                 </li>
                                             </ul>
                                         }
-
-                                    </li>
-
 
                                 </ul>
                                 }
                             </li>
                             <li>
-                                <a onClick={()=> setShow3(!show3)} className="sidebar-link">
+                                <div onClick={()=> setShow3(!show3)} className="sidebar-link">
                                     График
                                      {
                                         show3 ?
                                         <img className="sidebar_arrow" src={arrow}/>:
                                         <img className="sidebar_arrow" src={arrowRight}/>
                                     }
-                                </a>
+                                </div>
                                 {
                                             show3 &&
                                             <ul className="sub-submenu-list">
@@ -137,7 +124,7 @@ const Home = () => {
                             </li>
                             <li>
                                 <a onClick={()=> setShow4(!show4)}  className="sidebar-link">
-                                    Зарплата
+                                    Город
                                     {
                                         show4 ?
                                         <img className="sidebar_arrow" src={arrow}/>:
@@ -170,7 +157,7 @@ const Home = () => {
                                                             }
                                                     })}
                                                     />
-                                                   Не оплачиваемые стажировки
+                                                  Алматы
                                                </li>
                                                 <li>
                                                     <input type="checkbox"
@@ -182,7 +169,7 @@ const Home = () => {
                                                                 message:"color is required"
                                                             }
                                                     })}/>
-                                                    от 30тыс
+                                                    Нур-Султан
                                                 </li>
                                                 <li>
                                                     <input type="checkbox"
@@ -194,7 +181,7 @@ const Home = () => {
                                                                 message:"color is required"
                                                             }
                                                     })}/>
-                                                    от 50 тыс
+                                                    Караганда
                                                 </li>
                                                  <li>
                                                     <input type="checkbox"
@@ -206,7 +193,7 @@ const Home = () => {
                                                                 message:"color is required"
                                                             }
                                                     })}/>
-                                                    от 80 тыс
+                                                    Шымкент
                                                 </li>
                                                 <li>
                                                     <input type="checkbox"
@@ -218,7 +205,7 @@ const Home = () => {
                                                                 message:"color is required"
                                                             }
                                                     })}/>
-                                                    от 100 тыс
+                                                    Атырау
                                                 </li>
                                                 <li>
                                                     <input type="checkbox"
@@ -230,20 +217,7 @@ const Home = () => {
                                                                 message:"color is required"
                                                             }
                                                     })}/>
-                                                    от 150 тыс
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox"
-                                                           value="otherVariant"
-                                                           checked={selectAll}
-                                                    {...register("other", { required:
-                                                            {
-                                                                value: true,
-                                                                message:"color is required"
-                                                            }
-                                                    })}/>
-                                                    Свой вариант:
-                                                    <input className="sidebar_salary_number" type="number"/>
+                                                   Павлодар
                                                 </li>
                                             </ul>
                                         }
@@ -251,7 +225,6 @@ const Home = () => {
 
                         </ul>
                     </nav>
-
                 </div>
 
             </div>

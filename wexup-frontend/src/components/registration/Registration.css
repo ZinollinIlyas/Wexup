@@ -94,6 +94,15 @@ a {
     margin-bottom: 50px;
     justify-content: center;
 }
+.regBackMain {
+    margin-right: 50px;
+    padding:13px 40px;
+    background: #D3A6E9;
+    border:1px solid #D3A6E9;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
 .form-button-content {
     padding: 13px 40px;
     border: 1px solid #D3A6E9;
@@ -115,4 +124,5 @@ a {
 }
 .down-link {
     color:#9400DA;
+    cursor: pointer;
 }

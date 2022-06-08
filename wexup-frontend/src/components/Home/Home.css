@@ -3,29 +3,57 @@
     display: flex;
 }
 .sidebar_name {
-    min-width:300px;
-    background: #E0E0E0;
-
+    padding-top: 48px;
+    padding-right: 44px;
+    min-width:400px;
+    background: #FFFFFF;
+    border-right: 1px solid #C4C4C4;
 }
-.sidebar_submenu,.sub-submenu-list {
-    margin-top: 10px;
+.sidebarSearch {
+    margin-left: 52px;
+    margin-bottom: 33px;
+}
+.sidebar_title {
+    font-weight: 700;
+    font-size: 19px;
+}
+.submenu-list {
+    padding-top: 10px;
+    padding-left: 0;
+}
+.sidebar_menu {
+    display: flex;
+}
+.sidebar_submenu {
+    padding-left: 0;
 }
 .sidebar_menu li {
     list-style: none;
     cursor: pointer;
-    font-weight: 500;
-    font-size: 20px;
 }
-.submenu_checkbox_list {
-    display: flex;
+.linkFirst {
+    float: left;
+    padding-left: 40px;
+}
+.sidebar_menu_list {
+    margin-left: 100px;
 }
 .sidebar_menu_list li {
     margin-bottom: 25px;
 }
+.sub-submenu-list {
+    padding-top: 15px;
+}
 .sidebar-link {
     display: flex;
-    justify-content: center;
     align-items: center;
+    color: #2C2C2C;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    flex-wrap: wrap;
+
+
 
 }
 .sidebar_arrow {
@@ -36,3 +64,4 @@
     padding:10px 12px;
     background: transparent;
 }
+

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './Registration.css'
 import logoform from '../images/logo-form.png'
 import emptyreg from '../images/empty-reg.png'
@@ -9,6 +9,7 @@ import line from '../images/Line 14.png'
 import or from '../images/or.png'
 import linedown from '../images/Line2.png'
 import s from "../registration2/Registration2.module.css";
+import Modal2 from "../Modal2/Modal2";
 
 
 
@@ -16,7 +17,6 @@ const Registration = () =>
 {
     const submitStepOne = (e) => {
         e.preventDefault();
-
         const name_field = document.getElementById("student_name").value;
         const first_name = name_field.split(' ')[0];
         const second_name = name_field.split(' ')[1];
@@ -29,6 +29,8 @@ const Registration = () =>
         localStorage.setItem("password", password_field);
         window.location.replace("/registration/step2");
     };
+        const [modalActive2,setModalActive2] = useState(false);
+
     return (
         <div>
             <div className="header">
@@ -37,9 +39,6 @@ const Registration = () =>
                 </div>
                 <div>
                     <img src={completereg} alt="complete-reg" className="logo-complete"/>
-                    <img src={emptyreg} alt="empty-reg" className="logo-empty"/>
-                    <img src={emptyreg} alt="empty-reg" className="logo-empty"/>
-                    <img src={emptyreg} alt="empty-reg" className="logo-empty"/>
                     <img src={emptyreg} alt="empty-reg" className="logo-empty"/>
                     <img src={emptyreg} alt="empty-reg" className="logo-empty"/>
                 </div>
@@ -96,6 +95,10 @@ const Registration = () =>
                             </div>
                         </div>
                         <div className="form-button">
+
+                                <a href="/" className="regBackMain">
+                                     На Главную
+                                </a>
                                 <a href="/registration/step3" className={s.secondButtonContent} onClick={submitStepOne}>
                                         ДАЛЕЕ
                                 </a>
@@ -107,12 +110,17 @@ const Registration = () =>
                             Регистрируясь, вы соглашаетесь с <a className="down-link">пользовательским соглашением</a>
                         </div>
                         <div className="form-come">
-                            Уже есть аккаунт? <a className="down-link">Войти</a>
+                            Уже есть аккаунт?  <a className="down-link"
+                            onClick={()=>setModalActive2(true)}>
+                                Войти
+                            </a>
                         </div>
                     </form>
 
                 </div>
             </div>
+            <Modal2 active={modalActive2} setActive={setModalActive2}/>
+
         </div>
     )
 }
