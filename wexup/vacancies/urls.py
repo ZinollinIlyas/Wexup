@@ -4,10 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 # from .views import StudentsViewSet
 # from rest_framework import routers
-from .views import StudentsViewSet
+from .views import VacancyViewSet
 
 
 urlpatterns = [
-    path('', StudentsViewSet.as_view())
+    path('', VacancyViewSet.as_view())
 ]
 
