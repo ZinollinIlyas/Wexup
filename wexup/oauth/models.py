@@ -56,6 +56,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def has_module_perms(self, app_label):
         return True
 
+
 class Student(CustomUser):
     university = models.CharField(max_length=100, blank=True, null=True, verbose_name="university")
     city = models.CharField(max_length=60, blank=True, null=True, verbose_name="city")
@@ -70,4 +71,4 @@ class Recruiter(CustomUser):
     favored_roles = models.CharField(blank=True, null=True, max_length=200, verbose_name='favored roles')
     company = models.CharField(max_length=60, blank=True, null=True, verbose_name='company')
     position = models.CharField(max_length=60, blank=True, null=True, verbose_name='position')
-    vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE)
+    vacancy = models.ForeignKey(Vacancy, on_delete=models.CASCADE, related_name="recruiters")

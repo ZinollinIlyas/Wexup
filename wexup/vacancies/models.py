@@ -10,3 +10,4 @@ class Vacancy(models.Model):
     requirements = ArrayField(models.CharField(max_length=100, null=True, blank=True))
     conditions = ArrayField(models.CharField(max_length=100, null=True, blank=True))
     address = models.CharField(max_length=100, null=True, blank=True)
+    company = models.CharField(max_length=50, null=True, blank=True, verbose_name="company")
