@@ -33,7 +33,9 @@ const Registration3 = () =>
             },
             body: formData
         }
-        fetch("http://localhost:8000/api/students", options)
+        fetch("http://localhost:8000/api/users", options);
+
+        window.location.replace('/');
     }
     return (
         <div>

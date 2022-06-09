@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'psycopg2',
     'oauth',
+    'vacancy',
     'rest_framework',
     'corsheaders',
 ]

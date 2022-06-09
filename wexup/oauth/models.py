@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from vacancy.models import Vacancy
 
 
 class CustomUserManager(BaseUserManager):
@@ -25,7 +25,6 @@ class CustomUserManager(BaseUserManager):
             first_name=first_name,
             second_name=second_name
         )
-        print(f"{user.email, user.set_password}")
         user.is_admin = True
         user.is_superuser = True
         user.is_staff = True
@@ -45,18 +44,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-    role = models.SmallIntegerField(null=True, blank=True, verbose_name="role")
-    university = models.CharField(max_length=100, blank=True, null=True, verbose_name="university")
-    city = models.CharField(max_length=60, blank=True, null=True, verbose_name="city")
-    study_period = models.CharField(max_length=30, blank=True, null=True, verbose_name='study period')
-    specialty = models.CharField(max_length=100, blank=True, null=True, verbose_name='specialty')
-    gender = models.CharField(max_length=20, blank=True, null=False, verbose_name='gender')
-    avatar = models.ImageField(blank=True, null=True, upload_to='images/')
-    resume = models.FileField(blank=True, null=True, upload_to='resumes/')
-    favored_roles = models.CharField(blank=True, null=True, max_length=200, verbose_name='favored roles')
-    company = models.CharField(max_length=60, blank=True, null=True, verbose_name='company')
-    position = models.CharField(max_length=60, blank=True, null=True, verbose_name='position')
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['password', 'first_name', 'second_name']
 
@@ -68,11 +55,19 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def has_module_perms(self, app_label):
         return True
 
-# class Vacancy(models.Model):
-#     title = models.CharField(max_length=100, null=False, blank=False, verbose_name='title')
-#     recruiter_id = models.ForeignKey(Recruiter, on_delete=models.CASCADE)
-#     wage = models.CharField(max_length=60, null=False, blank=False, verbose_name='wage')
-#     duties = ArrayField(models.CharField(max_length=100, null=True, blank=True))
-#     requirements = ArrayField(models.CharField(max_length=100, null=True, blank=True))
-#     conditions = ArrayField(models.CharField(max_length=100, null=True, blank=True))
-#     address = models.CharField(max_length=100, null=True, blank=True)
+
+class Student(CustomUser):
+    university = models.CharField(max_length=100, blank=True, null=True, verbose_name="university")
+    city = models.CharField(max_length=60, blank=True, null=True, verbose_name="city")
+    study_period = models.CharField(max_length=30, blank=True, null=True, verbose_name='study period')
+    specialty = models.CharField(max_length=100, blank=True, null=True, verbose_name='specialty')
+    gender = models.CharField(max_length=20, blank=True, null=False, verbose_name='gender')
+    avatar = models.ImageField(blank=True, null=True, upload_to='images/')
+    resume = models.FileField(blank=True, null=True, upload_to='resumes/')
+
+
+class Recruiter(CustomUser):
+    favored_roles = models.CharField(blank=True, null=True, max_length=200, verbose_name='favored roles')
+    company = models.CharField(max_length=60, blank=True, null=True, verbose_name='company')
+    position = models.CharField(max_length=60, blank=True, null=True, verbose_name='position')
+    vacancy_id = models.ForeignKey(Vacancy, null=True, related_name="recruiters", on_delete=models.CASCADE)

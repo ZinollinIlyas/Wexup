@@ -1,17 +1,18 @@
 import React,{useState} from "react";
 import Vacancies from "../Vacancies/Vacancies";
 import "./Home.css"
+import logo from "../images/logo-form.png";
 import arrow from "../images/Arrow 1.svg";
 import arrowRight from "../images/ArrowRight.svg";
 import {useForm} from "react-hook-form";
 const Home = () => {
+
     const [show,setShow] = useState(false);
     const [show2,setShow2] = useState(false);
     const [show3,setShow3] = useState(false);
     const [show4,setShow4] = useState(false);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const selectAll = watch('selectAll');
-    const [value,setValue] = useState('')
 
     return (
         <div className="homePage">
