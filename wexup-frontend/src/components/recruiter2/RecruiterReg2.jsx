@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './RecruiterReg2.module.css'
 import logoform from '../images/logo-form.png'
 import emptyreg from '../images/empty-reg.png'
 import completereg from '../images/complete-reg.png'
 import woman from '../images/recruiterMan.png'
 import linedown from '../images/Line2.png'
+import Modal2 from "../Modal2/Modal2";
 const RecruiterReg2 = () =>
 {
+        const [modalActive2,setModalActive2] = useState(false);
+
     return (
         <div>
             <div className={s.header}>
@@ -60,12 +63,18 @@ const RecruiterReg2 = () =>
                             Регистрируясь, вы соглашаетесь с <a className={s.downLink}>пользовательским соглашением</a>
                         </div>
                         <div className={s.formCome}>
-                            Уже есть аккаунт? <a className={s.downLink}>Войти</a>
+                            Уже есть аккаунт? <a className={s.downLink}
+                            onClick={()=>setModalActive2(true)}>
+                                Войти
+                            </a>
                         </div>
                     </form>
 
                 </div>
             </div>
+                        <Modal2 active={modalActive2} setActive={setModalActive2}/>
+
+
         </div>
     )
 }

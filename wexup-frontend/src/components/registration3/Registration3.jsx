@@ -33,7 +33,9 @@ const Registration3 = () =>
             },
             body: formData
         }
-        fetch("http://localhost:8000/api/students", options)
+        fetch("http://localhost:8000/api/users", options);
+
+        window.location.replace('/');
     }
     return (
         <div>
@@ -48,11 +50,8 @@ const Registration3 = () =>
                     <img src={completereg} alt="complete-reg" className={s.logoComplete}/>
                     <img src={completereg} alt="complete-reg" className={s.logoComplete}/>
                     <img src={completereg} alt="complete-reg" className={s.logoComplete}/>
-                    <img src={emptyreg} alt="empty-reg" className={s.logoEmpty}/>
-                    <img src={emptyreg} alt="empty-reg" className={s.logoEmpty}/>
-                    <img src={emptyreg} alt="empty-reg" className={s.logoEmpty}/>
                      <a href="/registration/step4" className={s.secondButtonContent} onClick={submitStepThree}>
-                         ДАЛЕЕ
+                         Завершить
                      </a>
                 </div>
             </div>

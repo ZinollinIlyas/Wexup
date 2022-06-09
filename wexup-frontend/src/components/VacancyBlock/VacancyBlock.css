@@ -2,62 +2,77 @@
 
 .vacancies {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
 }
 .vacancyBlock {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 24px 48px 24px 76px;
     margin-top: 50px;
     margin-bottom: 30px;
-    max-width: 400px;
-    border: 2px solid #9400DA;
-    border-radius: 8px;
-    background: #9400DA;
+    min-width: 700px;
+    max-height: 117px;
+    border: 1px solid #838080;
+    border-radius: 66px;
+    background: transparent;
+    cursor: pointer;
 }
 .vacancyTitleContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom:15px;
-    position: relative;
-    z-index: 0;
+    margin-bottom:5px;
 }
-.titleStar {
-    max-width: 50px;
+.titleHeart {
+    max-width: 40px;
 }
 .vacancyTitle {
-    display: inline-block;
-    color: yellow;
-    padding:5px;
-    background:#9400DA;
-    font-size: 25px;
-    border: 1px solid #9400DA;
-    border-radius: 10px;
-    max-width:350px;
+    color: #2C2C2C;
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
 }
-.vacancyPlace,.vacancyCity {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color:yellow ;
+.vacancyPlace{
+    color: #2C2C2C;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 9px;
+
 }
 .vacancyDesc {
-    line-height: 25px;
-    font-size: 18px;
-    color:yellow ;
-    margin-bottom: 15px;
+    display: flex;
+}
+.vacancyDescBlocks {
+    color: #9400DA;
+    padding: 4px 10px;
+    font-weight: 400;
+    font-size: 12px;
+    border: 0.3px solid #9400DA;
+    border-radius: 4px;
+    max-width: 82px;
+    max-height: 20px;
+}
+.vacancyDescBlocks:not(:last-child) {
+    margin-right: 9px;
 }
 .vacanciesButton {
     display: flex;
     justify-content: center;
 }
+.vacancySecond {
+    display: flex;
+    align-items: center;
+}
+.vacancyImg {
+    margin-right: 17px;
+}
 .vacancyBtn {
     padding: 10px 15px;
-    margin-right: 25px;
-    background: transparent;
-    border: 2px solid yellow;
-    border-radius: 8px;
-    color: yellow;
-    font-size: 16px;
+    background: #9400DA;
+    border: 2px solid #9400DA;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
 }

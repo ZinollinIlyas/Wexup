@@ -8,6 +8,12 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import RecruiterReg1 from "./components/recruiter/RecruiterReg";
 import RecruiterReg2 from "./components/recruiter2/RecruiterReg2";
 import Home from "./components/Home/Home";
+import Students from "./components/ForStudents/Students";
+import Career from "./components/forCareer/Career";
+import Companies from "./components/ForCompanies/Companies";
+import Faq from "./components/Faq/Faq";
+import VacancyPage from "./components/VacancyPage/VacancyPage";
+import PrivateOffice from "./PrivateOffice/PrivateOffice";
 
 
 
@@ -23,6 +29,13 @@ export const App = () => {
                    <Route path="/registration/step4" element={<Registration4 />} />
                    <Route path="/recruiterReg/step1" element={<RecruiterReg1 />} />
                    <Route path="/recruiterReg/step2" element={<RecruiterReg2 />} />
+                   <Route path="/forStudents" element={<Students/>} />
+                   <Route path="/forCareer" element={<Career/>} />
+                   <Route path="/forCompanies" element={<Companies/>} />
+                   <Route path="/faq" element={<Faq/>} />
+                   <Route path="/vacancyPage" element={<VacancyPage/>} />
+                   <Route path="/privateOffice" element={<PrivateOffice/>} />
+
                    <Route path="*" element={<Navbar />}/>
                </Routes>
            </BrowserRouter>

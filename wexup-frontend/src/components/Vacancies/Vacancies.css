@@ -1,0 +1,38 @@
+.main_page {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.sidebar_search {
+    position: relative;
+}
+.sidebar_search_input {
+    min-width: 800px;
+    padding: 11px 50px;
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 8px;
+    color:#838080;
+
+}
+.search_btn {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    background: #FFFFFF;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.slider {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.slider_first {
+
+}

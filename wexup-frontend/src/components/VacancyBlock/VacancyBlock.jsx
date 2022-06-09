@@ -1,156 +1,174 @@
 import React from "react";
 import "./VacancyBlock.css"
-import  star from "../images/heart.svg"
-
+import  heart from "../images/heart2.svg"
+import {useNavigate} from "react-router-dom";
 
 const VacancyBlock = () => {
-
+    const navigate = useNavigate();
+    const goVacancyPage = () => navigate('/VacancyPage')
     return (
         <div className="vacancies">
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер в HR Департмент</h1>
-                        <img src={star} className="titleStar"/>
+            <div onClick={goVacancyPage} className="vacancyBlock">
+                <div className="vacancyFirst">
+                    <div className="vacancyTitleContent">
+                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                    </div>
+                    <div className="vacancyPlace">
+                        PRIME SOURCE
+                    </div>
+                    <div className="vacancyDesc">
+                        <div className="vacancyDescBlocks">
+                            Разработка
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Алматы
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Полный день
+                        </div>
+
+                    </div>
                 </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
-                </div>
-            </div>
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер WEB разработчик</h1>
-                        <img src={star} className="titleStar"/>
-                </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
+                <div className="vacancySecond">
+                    <div className="vacancyImg">
+                        <img src={heart} className="titleHeart"/>
+                    </div>
+                    <div className="vacanciesButton">
+                        <button className="vacancyBtn">
+                            Откликнуться
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер Backend разработчик</h1>
-                        <img src={star} className="titleStar"/>
+             <div className="vacancyBlock">
+                <div className="vacancyFirst">
+                    <div className="vacancyTitleContent">
+                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                    </div>
+                    <div className="vacancyPlace">
+                        PRIME SOURCE
+                    </div>
+                    <div className="vacancyDesc">
+                        <div className="vacancyDescBlocks">
+                            Разработка
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Алматы
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Полный день
+                        </div>
+
+                    </div>
                 </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
-                </div>
-            </div>
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер Аналитик данных</h1>
-                        <img src={star} className="titleStar"/>
-                </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
+                <div className="vacancySecond">
+                    <div className="vacancyImg">
+                        <img src={heart} className="titleHeart"/>
+                    </div>
+                    <div className="vacanciesButton">
+                        <button className="vacancyBtn">
+                            Откликнуться
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер Web-дизайнер</h1>
-                        <img src={star} className="titleStar"/>
+             <div className="vacancyBlock">
+                <div className="vacancyFirst">
+                    <div className="vacancyTitleContent">
+                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                    </div>
+                    <div className="vacancyPlace">
+                        PRIME SOURCE
+                    </div>
+                    <div className="vacancyDesc">
+                        <div className="vacancyDescBlocks">
+                            Разработка
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Алматы
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Полный день
+                        </div>
+
+                    </div>
                 </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
-                </div>
-            </div>
-            <div className="vacancyBlock">
-                <div className="vacancyTitleContent">
-                        <h1 className="vacancyTitle">Стажер Java разрабочик</h1>
-                        <img src={star} className="titleStar"/>
-                </div>
-                <div className="vacancyPlace">
-                    TOO GREAT COMPANY
-                </div>
-                <div className="vacancyCity">
-                    Алматы
-                </div>
-                <div className="vacancyDesc">
-                    Студенты 3-4 курсов, а так же недавние выпускники.<br/>
-                    Требование:Желание развиваться,ответственность,Коммуникабельность.
-                </div>
-                <div className="vacanciesButton">
-                    <button className="vacancyBtn">
-                        Откликнуться
-                    </button>
-                    <button className="vacancyBtn">
-                        Позвонить
-                    </button>
+                <div className="vacancySecond">
+                    <div className="vacancyImg">
+                        <img src={heart} className="titleHeart"/>
+                    </div>
+                    <div className="vacanciesButton">
+                        <button className="vacancyBtn">
+                            Откликнуться
+                        </button>
+                    </div>
                 </div>
             </div>
+             <div className="vacancyBlock">
+                <div className="vacancyFirst">
+                    <div className="vacancyTitleContent">
+                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                    </div>
+                    <div className="vacancyPlace">
+                        PRIME SOURCE
+                    </div>
+                    <div className="vacancyDesc">
+                        <div className="vacancyDescBlocks">
+                            Разработка
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Алматы
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Полный день
+                        </div>
+
+                    </div>
+                </div>
+                <div className="vacancySecond">
+                    <div className="vacancyImg">
+                        <img src={heart} className="titleHeart"/>
+                    </div>
+                    <div className="vacanciesButton">
+                        <button className="vacancyBtn">
+                            Откликнуться
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <div className="vacancyBlock">
+                <div className="vacancyFirst">
+                    <div className="vacancyTitleContent">
+                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                    </div>
+                    <div className="vacancyPlace">
+                        PRIME SOURCE
+                    </div>
+                    <div className="vacancyDesc">
+                        <div className="vacancyDescBlocks">
+                            Разработка
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Алматы
+                        </div>
+                         <div className="vacancyDescBlocks">
+                            Полный день
+                        </div>
+
+                    </div>
+                </div>
+                <div className="vacancySecond">
+                    <div className="vacancyImg">
+                        <img src={heart} className="titleHeart"/>
+                    </div>
+                    <div className="vacanciesButton">
+                        <button className="vacancyBtn">
+                            Откликнуться
+                        </button>
+                    </div>
+                </div>
+            </div>
+
 
 
 

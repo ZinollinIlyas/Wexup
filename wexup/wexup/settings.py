@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'psycopg2',
     'oauth',
+    'vacancy',
     'rest_framework',
     'vacancies',
 ]

@@ -25,7 +25,6 @@ class CustomUserManager(BaseUserManager):
             first_name=first_name,
             second_name=second_name
         )
-        print(f"{user.email, user.set_password}")
         user.is_admin = True
         user.is_superuser = True
         user.is_staff = True
