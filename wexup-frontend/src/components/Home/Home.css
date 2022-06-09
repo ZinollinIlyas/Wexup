@@ -4,8 +4,7 @@
 }
 .sidebar_name {
     padding-top: 48px;
-    padding-right: 44px;
-    min-width:400px;
+    min-width:480px;
     background: #FFFFFF;
     border-right: 1px solid #C4C4C4;
 }

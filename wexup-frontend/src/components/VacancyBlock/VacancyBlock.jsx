@@ -1,13 +1,14 @@
 import React from "react";
 import "./VacancyBlock.css"
 import  heart from "../images/heart2.svg"
-
+import {useNavigate} from "react-router-dom";
 
 const VacancyBlock = () => {
-
+    const navigate = useNavigate();
+    const goVacancyPage = () => navigate('/VacancyPage')
     return (
         <div className="vacancies">
-            <div className="vacancyBlock">
+            <div onClick={goVacancyPage} className="vacancyBlock">
                 <div className="vacancyFirst">
                     <div className="vacancyTitleContent">
                             <h2 className="vacancyTitle">Junior web - разработчик</h2>

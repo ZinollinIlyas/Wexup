@@ -18,6 +18,7 @@
     border: 1px solid #838080;
     border-radius: 66px;
     background: transparent;
+    cursor: pointer;
 }
 .vacancyTitleContent {
     margin-bottom:5px;
@@ -47,6 +48,7 @@
     font-weight: 400;
     font-size: 12px;
     border: 0.3px solid #9400DA;
+    border-radius: 4px;
     max-width: 82px;
     max-height: 20px;
 }
