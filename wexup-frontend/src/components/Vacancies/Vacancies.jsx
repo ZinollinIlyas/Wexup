@@ -8,9 +8,9 @@ const Vacancies = () => {
     const [vacancies, setVacancies] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/vacancies', {crossDomain:true,method: "GET",mode: 'cors', header: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}})
-        .then(res => console.log(res))
-        .then(data => console.log('asdfasdf', data));
+        fetch('http://localhost:8000/api/vacancies/', {crossDomain:true,method: "GET",mode: 'cors', header: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}})
+        .then(res => res.json())
+        .then(data => setVacancies(data));
     }, [])
     console.log(vacancies);
     return (
@@ -25,7 +25,9 @@ const Vacancies = () => {
                     </div>
             </div>
             <Banner/>
-            <VacancyBlock/>
+            {vacancies.map(vacancy => (
+                <VacancyBlock title={vacancy.title} company={vacancy.company}/>
+            ))}
         </div>
 
     )

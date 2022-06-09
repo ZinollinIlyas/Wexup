@@ -3,7 +3,7 @@ import "./VacancyBlock.css"
 import  heart from "../images/heart2.svg"
 import {useNavigate} from "react-router-dom";
 
-const VacancyBlock = () => {
+const VacancyBlock = props => {
     const navigate = useNavigate();
     const goVacancyPage = () => navigate('/VacancyPage')
     return (
@@ -11,10 +11,10 @@ const VacancyBlock = () => {
             <div onClick={goVacancyPage} className="vacancyBlock">
                 <div className="vacancyFirst">
                     <div className="vacancyTitleContent">
-                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
+                            <h2 className="vacancyTitle">{props.title}</h2>
                     </div>
                     <div className="vacancyPlace">
-                        PRIME SOURCE
+                        {props.company}
                     </div>
                     <div className="vacancyDesc">
                         <div className="vacancyDescBlocks">
@@ -40,137 +40,6 @@ const VacancyBlock = () => {
                     </div>
                 </div>
             </div>
-             <div className="vacancyBlock">
-                <div className="vacancyFirst">
-                    <div className="vacancyTitleContent">
-                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
-                    </div>
-                    <div className="vacancyPlace">
-                        PRIME SOURCE
-                    </div>
-                    <div className="vacancyDesc">
-                        <div className="vacancyDescBlocks">
-                            Разработка
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Алматы
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Полный день
-                        </div>
-
-                    </div>
-                </div>
-                <div className="vacancySecond">
-                    <div className="vacancyImg">
-                        <img src={heart} className="titleHeart"/>
-                    </div>
-                    <div className="vacanciesButton">
-                        <button className="vacancyBtn">
-                            Откликнуться
-                        </button>
-                    </div>
-                </div>
-            </div>
-             <div className="vacancyBlock">
-                <div className="vacancyFirst">
-                    <div className="vacancyTitleContent">
-                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
-                    </div>
-                    <div className="vacancyPlace">
-                        PRIME SOURCE
-                    </div>
-                    <div className="vacancyDesc">
-                        <div className="vacancyDescBlocks">
-                            Разработка
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Алматы
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Полный день
-                        </div>
-
-                    </div>
-                </div>
-                <div className="vacancySecond">
-                    <div className="vacancyImg">
-                        <img src={heart} className="titleHeart"/>
-                    </div>
-                    <div className="vacanciesButton">
-                        <button className="vacancyBtn">
-                            Откликнуться
-                        </button>
-                    </div>
-                </div>
-            </div>
-             <div className="vacancyBlock">
-                <div className="vacancyFirst">
-                    <div className="vacancyTitleContent">
-                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
-                    </div>
-                    <div className="vacancyPlace">
-                        PRIME SOURCE
-                    </div>
-                    <div className="vacancyDesc">
-                        <div className="vacancyDescBlocks">
-                            Разработка
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Алматы
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Полный день
-                        </div>
-
-                    </div>
-                </div>
-                <div className="vacancySecond">
-                    <div className="vacancyImg">
-                        <img src={heart} className="titleHeart"/>
-                    </div>
-                    <div className="vacanciesButton">
-                        <button className="vacancyBtn">
-                            Откликнуться
-                        </button>
-                    </div>
-                </div>
-            </div>
-             <div className="vacancyBlock">
-                <div className="vacancyFirst">
-                    <div className="vacancyTitleContent">
-                            <h2 className="vacancyTitle">Junior web - разработчик</h2>
-                    </div>
-                    <div className="vacancyPlace">
-                        PRIME SOURCE
-                    </div>
-                    <div className="vacancyDesc">
-                        <div className="vacancyDescBlocks">
-                            Разработка
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Алматы
-                        </div>
-                         <div className="vacancyDescBlocks">
-                            Полный день
-                        </div>
-
-                    </div>
-                </div>
-                <div className="vacancySecond">
-                    <div className="vacancyImg">
-                        <img src={heart} className="titleHeart"/>
-                    </div>
-                    <div className="vacanciesButton">
-                        <button className="vacancyBtn">
-                            Откликнуться
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-
-
 
         </div>
 
