@@ -1,0 +1,38 @@
+.modalWay {
+    height: 100vh;
+    width: 100vw;
+    background:  rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition:0.5s;
+    z-index: 200;
+}
+.modalWay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.modalWayContent {
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    max-width: 600px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.wayBlockBtn {
+    padding: 6px 20px;
+    background: #9400DA;
+    border-radius: 4px;
+    color: #FFFFFF;
+    border: 1px solid #9400DA;
+    cursor:pointer;
+    margin-bottom: 20px;
+
+}

@@ -5,6 +5,7 @@ import logo from "../images/logo-form.png";
 import arrow from "../images/Arrow 1.svg";
 import arrowRight from "../images/ArrowRight.svg";
 import {useForm} from "react-hook-form";
+import Footer from "../Footer/footer";
 const Home = () => {
 
     const [show,setShow] = useState(false);
@@ -15,8 +16,9 @@ const Home = () => {
     const selectAll = watch('selectAll');
 
     return (
-        <div className="homePage">
-            <div className="sidebar_name">
+        <div>
+            <div className="homePage">
+                <div className="sidebar_name">
                 <div className="sidebarSearch">
                     <h2 className="sidebar_title">
                         Условия поиска
@@ -229,7 +231,10 @@ const Home = () => {
                 </div>
 
             </div>
-            <Vacancies/>
+                <Vacancies/>
+
+            </div>
+            <Footer/>
         </div>
     )
 }

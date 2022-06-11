@@ -14,6 +14,8 @@ import Companies from "./components/ForCompanies/Companies";
 import Faq from "./components/Faq/Faq";
 import VacancyPage from "./components/VacancyPage/VacancyPage";
 import PrivateOffice from "./PrivateOffice/PrivateOffice";
+import OfficeCompany from "./components/OfficeCompany/OfficeCompany";
+import Footer from "./components/Footer/footer";
 
 
 
@@ -35,7 +37,7 @@ export const App = () => {
                    <Route path="/faq" element={<Faq/>} />
                    <Route path="/vacancyPage" element={<VacancyPage/>} />
                    <Route path="/privateOffice" element={<PrivateOffice/>} />
-
+                   <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
                    <Route path="*" element={<Navbar />}/>
                </Routes>
            </BrowserRouter>

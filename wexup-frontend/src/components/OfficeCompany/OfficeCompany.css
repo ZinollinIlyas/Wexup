@@ -1,39 +1,39 @@
-.office-content {
+.company-content {
     padding: 45px 52px 50px 24px;
     display: flex;
 }
-.office-first {
+.company-first {
     margin-right: 23px;
     padding: 46px 30px;
     max-width: 820px;
     border: 1px solid #838080;
     border-radius: 15px;
 }
-.office-first-head {
+.company-first-head {
     display: flex;
     padding-bottom: 25px;
     border-bottom: 1px solid #C4C4C4;
 }
-.office-profile-photo{
+.company-profile-photo{
     margin-right: 33px;
     border-radius: 150px;
     border: 1px solid grey;
     max-width: 138px;
     min-height: 138px;
 }
-.head-desc {
+.company-head-desc {
     margin-right: 149px;
     display: flex;
     flex-direction: column;
 }
-.head-age {
+.company-head-age{
     margin-bottom: 2px;
 }
-.head-name {
+.company-head-name {
     font-weight: 700;
     font-size: 30px;
 }
-.head-redact-btn {
+.company-redact-btn {
     background: #9400DA;
     border:1px solid #9400DA;
     border-radius: 4px;
@@ -42,28 +42,47 @@
     font-size: 14px;
     color: #FFFFFF;
 }
-.office-first-body {
-}
-.body-first a {
+.body-company a {
     font-weight: 400;
     font-size: 18px;
     color: #9400DA;
 }
-.body-titles {
+.company-body-title {
     font-weight: 400;
     font-size: 20px;
     margin-bottom:5px;
 }
-.body-input {
+.company-body-input {
     border: 1px solid #C4C4C4;
-    padding-bottom: 78px;
+    padding-bottom: 430px;
     min-width: 800px;
     font-weight: 400;
     font-size: 18px;
 }
-.office-second {
+.company-body-way {
+    border: 1px solid #C4C4C4;
+    min-width: 800px;
+    font-weight: 400;
+    font-size: 18px;
+    min-height: 100px;
+}
+.body-company {
+    position: relative;
+}
+.company-pencil {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+}
+.company-second{
     min-width: 418px;
     padding: 70px 30px;
     border: 1px solid #838080;
     border-radius: 15px;
+}
+.company-add-vacancy {
+     font-weight: 400;
+    font-size: 18px;
+    color: #9400DA;
 }
