@@ -8,8 +8,8 @@ const VacancyBlock = props => {
     const goVacancyPage = () => navigate('/VacancyPage')
     return (
         <div className="vacancies">
-            <div onClick={goVacancyPage} className="vacancyBlock">
-                <div className="vacancyFirst">
+            <div className="vacancyBlock">
+                <div  onClick={goVacancyPage} className="vacancyFirst">
                     <div className="vacancyTitleContent">
                             <h2 className="vacancyTitle">{props.title}</h2>
                     </div>

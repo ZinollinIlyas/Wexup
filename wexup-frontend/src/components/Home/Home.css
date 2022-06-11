@@ -1,6 +1,8 @@
 
 .homePage {
     display: flex;
+    padding-bottom: 244px;
+
 }
 .sidebar_name {
     padding-top: 48px;
