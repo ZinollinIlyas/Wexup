@@ -1,5 +1,6 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from oauth.models import Recruiter
 
 
 class Vacancy(models.Model):
@@ -11,3 +12,4 @@ class Vacancy(models.Model):
     conditions = ArrayField(models.CharField(max_length=100, null=True, blank=True))
     address = models.CharField(max_length=100, null=True, blank=True)
     company = models.CharField(max_length=50, null=True, blank=True, verbose_name="company")
+    recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, null=True, blank=True, related_name="vacancies")
