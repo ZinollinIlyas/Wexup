@@ -16,6 +16,7 @@ class StudentsViewSet(APIView):
     def get(self, request):
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)
+        print(request.user)
         return Response(serializer.data)
 
     def post(self, request, format=None):
