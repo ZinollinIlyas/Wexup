@@ -17,8 +17,8 @@ const Navbar = () => {
            </div>
            <div className="navbar-students">
                <a className="navbar-link"
-                  href="/forStudents">
-                   Студентам
+                  href="/">
+                   На Главную
                </a>
            </div>
            <div className="navbar-companies">

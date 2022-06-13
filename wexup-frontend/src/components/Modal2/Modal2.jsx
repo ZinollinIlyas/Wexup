@@ -49,7 +49,7 @@ const Modal2 = ({active,setActive}) => {
                                 </div>
                             </div>
                         <div className="modal_form-button">
-                                <a href="/registration/step2" className="modal_form-button-content">
+                                <a href="/" className="modal_form-button-content">
                                     Войти
                                 </a>
                         </div>
