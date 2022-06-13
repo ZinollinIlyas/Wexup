@@ -1,4 +1,4 @@
-import React, {useState} from "react";  
+import React, {useState} from "react";
 import './Registration.css'
 import logoform from '../images/logo-form.png'
 import emptyreg from '../images/empty-reg.png'

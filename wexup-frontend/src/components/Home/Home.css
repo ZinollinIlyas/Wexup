@@ -6,7 +6,7 @@
 }
 .sidebar_name {
     padding-top: 48px;
-    min-width:480px;
+    min-width:380px;
     background: #FFFFFF;
     border-right: 1px solid #C4C4C4;
 }
@@ -35,9 +35,6 @@
 .linkFirst {
     float: left;
     padding-left: 40px;
-}
-.sidebar_menu_list {
-    margin-left: 100px;
 }
 .sidebar_menu_list li {
     margin-bottom: 25px;

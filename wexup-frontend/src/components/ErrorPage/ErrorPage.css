@@ -1,0 +1,33 @@
+
+.errorPage {
+    padding: 50px;
+}
+.errorContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.errorDesc {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.errorLink {
+    background: #9400DA;
+    border: 1px solid #9400DA;
+    border-radius: 4px;
+    padding: 12px 30px;
+    color: #FFFFFF;
+}
+.errorImg {
+    max-width: 450px;
+    max-height: 300px;
+    margin-bottom: 30px;
+}
+.errorLogo {
+    max-width: 700px;
+    max-height: 350px;
+    position: absolute;
+    transform:translateY(-150px);
+}

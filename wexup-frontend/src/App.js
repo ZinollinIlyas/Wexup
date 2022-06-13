@@ -17,6 +17,8 @@ import PrivateOffice from "./PrivateOffice/PrivateOffice";
 import OfficeCompany from "./components/OfficeCompany/OfficeCompany";
 import Footer from "./components/Footer/footer";
 import VacancyContent from "./VacancyContent/VacancyContent";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
+
 
 
 
@@ -38,7 +40,7 @@ export const App = () => {
                    <Route path="/vacancyPage" element={<VacancyContent/>} />
                    <Route path="/privateOffice" element={<PrivateOffice/>} />
                    <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
-                   <Route path="*" element={<Navbar />}/>
+                   <Route path="*" element={<ErrorPage/>}/>
                </Routes>
            </BrowserRouter>
     )
