@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import VacancyBlock from "../VacancyBlock/VacancyBlock";
 import "./Vacancies.css";
-import vector from "../images/Vector.svg"
+import vector from "../images/Vector.svg";
 import Banner from "../BannerAdvertisement/Banner";
 import {get} from "react-hook-form";
 
@@ -61,7 +61,6 @@ const Vacancies = () => {
                 <VacancyBlock title={vacancy.title} company={vacancy.company}/>
             ))}
         </div>
-
     )
 }
 export default Vacancies

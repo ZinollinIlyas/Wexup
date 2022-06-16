@@ -67,31 +67,19 @@ const Navbar = () => {
     }
     return (
        <div className="navbar">
-           <a href={'/'} className="navbar-logo">
+           <div className="navbar-logo">
                <img src={logo} alt="logo" className="navbar-logo-img" />
-           </a>
-           <div className="navbar-students">
-               <a className="navbar-link"
-                  href="/">
-                   На Главную
-               </a>
-           </div>
-           <div className="navbar-companies">
-               <a className="navbar-link"
-               href="/forCareer">
-                   Карьерным центрам
-               </a>
-           </div>
-           <div className="navbar-companies">
-               <a className="navbar-link"
-               href="/forCompanies">
-                   Компаниям
-               </a>
            </div>
            <div className="navbar-faq">
                <a className="navbar-link"
-                  href="/faq">
-                   FAQ
+                  href="/favor">
+                   Избранное
+               </a>
+           </div>
+            <div className="navbar-students">
+               <a className="navbar-link"
+                  href="/">
+                   Вакансии
                </a>
            </div>
            <div className="navbarAcc">

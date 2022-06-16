@@ -47,22 +47,22 @@ export const App = () => {
     return (
          <BrowserRouter>
              <Navbar />
-                   <Routes>
-                       <Route path="/" element={<Home/>}/>
-                       <Route path="/registration/step1" element={<Registration />} />
-                       <Route path="/registration/step2" element={<Registration2 />} />
-                       <Route path="/registration/step3" element={<Registration3 />} />
-                       <Route path="/registration/step4" element={<Registration4 />} />
-                       <Route path="/recruiterReg/step1" element={<RecruiterReg1 />} />
-                       <Route path="/recruiterReg/step2" element={<RecruiterReg2 />} />
-                       <Route path="/forCareer" element={<Career/>} />
-                       <Route path="/forCompanies" element={<Companies/>} />
-                       <Route path="/faq" element={<Faq/>} />
-                       <Route path="/vacancyPage" element={<VacancyContent/>} />
-                       <Route path="/privateOffice" element={<PrivateOffice/>} />
-                       <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
-                       <Route path="*" element={<ErrorPage/>}/>
-                   </Routes>
+               <Routes>
+                   <Route path="/" element={<Home/>}/>
+                   <Route path="/registration/step1" element={<Registration />} />
+                   <Route path="/registration/step2" element={<Registration2 />} />
+                   <Route path="/registration/step3" element={<Registration3 />} />
+                   <Route path="/registration/step4" element={<Registration4 />} />
+                   <Route path="/recruiterReg/step1" element={<RecruiterReg1 />} />
+                   <Route path="/recruiterReg/step2" element={<RecruiterReg2 />} />
+                   <Route path="/forCareer" element={<Career/>} />
+                   <Route path="/forCompanies" element={<Companies/>} />
+                   <Route path="/favor" element={<Faq/>} />
+                   <Route path="/vacancyPage" element={<VacancyContent/>} />
+                   <Route path="/privateOffice" element={<PrivateOffice/>} />
+                   <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
+                   <Route path="*" element={<ErrorPage/>}/>
+               </Routes>
            </BrowserRouter>
     )
 

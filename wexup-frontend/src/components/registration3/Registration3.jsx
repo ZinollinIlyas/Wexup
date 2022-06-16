@@ -80,16 +80,6 @@ const Registration3 = () =>
                 </div>
             </div>
             <div className={s.main}>
-                <div className={s.male}>
-                        <div className={s.maleTitle}>
-                            Ваш пол *
-                        </div>
-                        <div className={s.maleInput}>
-                            <input type="button" value="Мужской" className={s.malePerson}/>
-                            <input type="button" value="Женский" className={s.malePerson}/>
-                        </div>
-
-                </div>
                 <div>
                     <div className={s.profile}>
                         <div className={s.profileTitle}>

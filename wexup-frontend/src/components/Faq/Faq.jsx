@@ -6,7 +6,7 @@ const Companies = () =>
     return (
         <div>
             <h1>
-                FAQ Sanzhar
+                FAVOURITE
             </h1>
 
             <Footer/>
