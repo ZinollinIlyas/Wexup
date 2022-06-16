@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import VacancyBlock from "../VacancyBlock/VacancyBlock";
 import "./Vacancies.css";
-import vector from "../images/Vector.svg"
+import vector from "../images/Vector.svg";
 import Banner from "../BannerAdvertisement/Banner";
 
 const Vacancies = () => {
@@ -29,7 +29,6 @@ const Vacancies = () => {
                 <VacancyBlock title={vacancy.title} company={vacancy.company}/>
             ))}
         </div>
-
     )
 }
 export default Vacancies

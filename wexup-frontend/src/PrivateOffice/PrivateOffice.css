@@ -41,13 +41,19 @@
     font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
+    cursor: pointer;
 }
-.office-first-body {
+.head-pencil {
+    cursor: pointer;
+}
+.head-redact-btn:active {
+    padding: 7px 7px;
 }
 .body-first a {
     font-weight: 400;
     font-size: 18px;
     color: #9400DA;
+    cursor: pointer;
 }
 .body-titles {
     font-weight: 400;

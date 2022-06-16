@@ -13,7 +13,6 @@ const Footer = () => {
            <div className="footerFirst">
                <a href="/faq" className="footerFaq">FAQ</a>
                <div className="footerImg">
-                   <a><img src={instagram}/></a>
                    <a href="https://api.whatsapp.com/send/?phone=87714088661"><img src={wpp}/></a>
                    <a href="https://t.me/wexupfind"><img src={telegram}/></a>
                </div>

@@ -1,14 +1,13 @@
 import React,{useState} from "react";
 import "./VacancyBlock.css"
-import  heart from "../images/heart2.svg"
+import  heart from "../images/normalHeart.svg"
 import {useNavigate} from "react-router-dom";
-import heart2 from "../images/Polygon 5.svg"
+import heart2 from "../images/heart.svg"
 
 const VacancyBlock = props => {
         const [show2,setShow2] = useState(false);
         const [show3,setShow3] = useState(false);
-
-    const navigate = useNavigate();
+        const navigate = useNavigate();
     const goVacancyPage = () => navigate('/VacancyPage')
     return (
         <div className="vacancies">
@@ -37,8 +36,8 @@ const VacancyBlock = props => {
                     <div className="vacancyImg">
                        {
                                             show2 ?
-                                        <img onClick={()=> setShow2(!show2)}  src={heart2}/>:
-                                        <img onClick={()=> setShow2(!show2)}  src={heart}/>
+                                        <img onClick={()=> setShow2(!show2)}  src={heart}/>:
+                                        <img onClick={()=> setShow2(!show2)}  src={heart2}/>
                                     }
                     </div>
                     <div className="vacanciesButton">
@@ -50,7 +49,6 @@ const VacancyBlock = props => {
                     </div>
                 </div>
             </div>
-
         </div>
 
 

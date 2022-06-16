@@ -36,7 +36,7 @@ export const App = () => {
                    <Route path="/recruiterReg/step2" element={<RecruiterReg2 />} />
                    <Route path="/forCareer" element={<Career/>} />
                    <Route path="/forCompanies" element={<Companies/>} />
-                   <Route path="/faq" element={<Faq/>} />
+                   <Route path="/favor" element={<Faq/>} />
                    <Route path="/vacancyPage" element={<VacancyContent/>} />
                    <Route path="/privateOffice" element={<PrivateOffice/>} />
                    <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
