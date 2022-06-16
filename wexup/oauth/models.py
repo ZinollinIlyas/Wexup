@@ -3,13 +3,14 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, first_name, second_name, password=None):
+    def create_user(self, email, first_name, second_name, role, password=None):
         if not email:
             raise ValueError("Users must have an email address")
         user = self.model(
             email=self.normalize_email(email),
             first_name=first_name,
-            second_name=second_name
+            second_name=second_name,
+            role=role
         )
         user.set_password(password)
         user.is_active = True
@@ -22,7 +23,8 @@ class CustomUserManager(BaseUserManager):
             email=self.normalize_email(email),
             password=password,
             first_name=first_name,
-            second_name=second_name
+            second_name=second_name,
+            role="admin"
         )
         user.is_admin = True
         user.is_superuser = True
@@ -37,6 +39,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     password = models.CharField(max_length=100, null=False, blank=False, verbose_name="password")
     first_name = models.CharField(max_length=60, blank=False, null=False, verbose_name="first_name")
     second_name = models.CharField(max_length=60, blank=False, null=False, verbose_name="second_name")
+    role = models.CharField(max_length=20, null=False, blank=False, verbose_name="role", default="admin")
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name="date_joined")
     last_login = models.DateTimeField(auto_now=True, verbose_name="last_login")
     is_admin = models.BooleanField(default=False)

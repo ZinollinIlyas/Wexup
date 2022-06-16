@@ -8,7 +8,7 @@ import linedown from '../images/Line2.png'
 
 const Registration3 = () =>
 {
-    const submitStepThree = (e) => {
+    const submitStepThree = async (e) => {
         e.preventDefault();
 
         const image_field = document.getElementById("student_avatar").files[0];
@@ -19,6 +19,7 @@ const Registration3 = () =>
         formData.append("second_name", localStorage.getItem("second_name"));
         formData.append("email", localStorage.getItem("email"));
         formData.append("password", localStorage.getItem("password"));
+        formData.append("role", "student");
         formData.append("university", localStorage.getItem("password"));
         formData.append("city", localStorage.getItem("city"));
         formData.append("study_period", localStorage.getItem("study_period"));
@@ -33,9 +34,32 @@ const Registration3 = () =>
             },
             body: formData
         }
-        fetch("http://localhost:8000/api/users", options);
+        let response = await fetch("http://localhost:8000/api/students/", options);
+        let data = await response.json();
+        if (response.status === 200) {
+            console.log(data);
+            let another_formData = new FormData();
+            another_formData.append("email", data.email)
+            another_formData.append("password", localStorage.getItem("password"))
+            let another_response = await fetch("http://localhost:8000/api/token/", {
+                method: "POST",
+                header: {
+                "Content-Type": "application/json"
+                },
+                body: another_formData
+            })
+            let another_data = await another_response.json();
+            if (another_response.status === 200) {
+                localStorage.setItem("access", another_data.access);
+                localStorage.setItem("refresh", another_data.refresh);
+                window.location.replace("/")
+            } else {
+                alert("Could not get tokens");
+            }
+        } else {
+            alert("Something went wrong, try again");
+        }
 
-        window.location.replace('/');
     }
     return (
         <div>
