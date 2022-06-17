@@ -60,7 +60,7 @@ const Navbar = () => {
         return (
              <div className="navbar-avatar">
                    <a className="navbar-avatar-link">
-                     <img className="avatar-link-img"/>
+                     <img src={`${currentUser.avatar}`} className="avatar-link-img"/>
                    </a>
                </div>
         )

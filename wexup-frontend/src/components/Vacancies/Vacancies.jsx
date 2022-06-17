@@ -8,6 +8,7 @@ import {get} from "react-hook-form";
 const Vacancies = () => {
     const [vacancies, setVacancies] = useState([]);
     const [currentUser, setCurrentUser] = useState({})
+    const [vacancyToRespond, setVacancyToRespond] = useState(0)
 
 
     useEffect(() => {
@@ -16,6 +17,8 @@ const Vacancies = () => {
         .then(data => setVacancies(data));
     }, [])
     console.log(vacancies)
+
+
 
     const parseJwt = token => {
         let base64Url = token.split('.')[1];
@@ -38,12 +41,22 @@ const Vacancies = () => {
             setCurrentUser(data);
         }
     };
-
     useEffect(() => {
         get_user()
     }, [])
+    console.log(currentUser);
 
-
+    const respondVacancy = async () => {
+        let formdata = new FormData();
+        console.log(vacancyToRespond);
+        formdata.append("students", [currentUser.id])
+        let response = await fetch(`http://localhost:8000/api/vacancies/update/${vacancyToRespond}`, {
+            method: "PUT",
+            body: formdata
+        })
+        let data = await response;
+        console.log(data);
+    }
 
     return (
         <div>
@@ -58,7 +71,7 @@ const Vacancies = () => {
             </div>
             <Banner/>
             {vacancies.map(vacancy => (
-                <VacancyBlock title={vacancy.title} company={vacancy.company}/>
+                <VacancyBlock key={vacancy.id} id={vacancy.id} title={vacancy.title} company={vacancy.company} currentUser={currentUser} students={vacancy.students}/>
             ))}
         </div>
     )
