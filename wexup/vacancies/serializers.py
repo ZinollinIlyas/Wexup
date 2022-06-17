@@ -6,14 +6,32 @@ from rest_framework.relations import PrimaryKeyRelatedField
 
 from .models import Vacancy
 from oauth.serializers import StudentSerializer, RecruiterSerializer
-from oauth.models import Student
+from oauth.models import Student, Recruiter
 
 
 class VacancyListSerializer(serializers.ModelSerializer):
+    recruiter = serializers.PrimaryKeyRelatedField(read_only=False, many=False, queryset=Recruiter.objects.all())
     class Meta:
         model = Vacancy
         fields = "__all__"
         depth = 1
+
+    def create(self, validated_data):
+        print(validated_data)
+        recruiter = validated_data["recruiter"]
+        vacancy = Vacancy.objects.create(
+            title=validated_data["title"],
+            wage=validated_data["wage"],
+            description=validated_data["description"],
+            duties=validated_data["duties"],
+            requirements=validated_data["requirements"],
+            conditions=validated_data["conditions"],
+            company=validated_data["company"]
+        )
+        vacancy.save()
+        recruiter.vacancies.add(vacancy)
+        return vacancy
+
 
 
 class VacancySerializer(serializers.ModelSerializer):

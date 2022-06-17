@@ -1,10 +1,46 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import "./ModalAddVacancy.css"
 import cross from "../images/x.svg"
 
 
 
-const ModalAddVacancy = ({active,setActive}) => {
+const ModalAddVacancy = ({active,setActive, current_user}) => {
+    const createVacancy = async (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("vacancy_title").value;
+        const company = document.getElementById("vacancy_company").value;
+        const wage = document.getElementById("vacancy_wage").value;
+        const description = document.getElementById('vacancy_description').value;
+        const requirements_fields = document.getElementById("vacancy_requirements").value;
+        const duties = document.getElementById("vacancy_duties").value;
+        const conditions = document.getElementById("vacancy_conditions").value;
+        const address = document.getElementById("vacancy_address").value;
+        let formdata = new FormData();
+        formdata.append("title", title);
+        formdata.append("company", company)
+        formdata.append("wage", wage);
+        formdata.append("description", description)
+        formdata.append("requirements", requirements_fields);
+        formdata.append("duties", duties);
+        formdata.append("conditions", conditions);
+        formdata.append("address", address);
+        formdata.append("recruiter", current_user.id)
+
+        let response = await fetch("http://localhost:8000/api/vacancies/", {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('access')}`
+            },
+            body: formdata,
+        })
+        let data = await response.json();
+        if (response.status === 200) {
+            console.log(data);
+            setActive(false);
+        }
+    }
+
 
     return (
         <div className={active ? "modalAdd active" :"modalAdd"} onClick={()=> setActive(false)}>
@@ -18,30 +54,38 @@ const ModalAddVacancy = ({active,setActive}) => {
                         <div className="modalAddInputs">
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Название вакансии</h2>
-                                <input placeholder="Например: Junior web - разработчик" className="inputContentBlock"/>
+                                <input id={'vacancy_title'} placeholder="Например: Junior web - разработчик" className="inputContentBlock"/>
+                            </div>
+                            <div className="addContentInput">
+                                <h2 className="addInputTitle">Компания</h2>
+                                <input id={'vacancy_company'} placeholder="Например: Prime Source" className="inputContentBlock"/>
                             </div>
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Оклад</h2>
-                                <input placeholder="Например: 100 000тг" className="inputContentBlock"/>
+                                <input id={'vacancy_wage'} placeholder="Например: 100 000тг" className="inputContentBlock"/>
+                            </div>
+                             <div className="addContentInput">
+                                <h2 className="addInputTitle">Описание</h2>
+                                <input id={'vacancy_description'} placeholder="Например: Мы занимаемся тем, что..." className="inputContentBlock"/>
                             </div>
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Требование</h2>
-                                <input placeholder="Опишите требования к кандидату" className="inputContentBlock inputContentBlockSecond "/>
+                                <input id={'vacancy_requirements'} placeholder="Опишите требования к кандидату через запятую" className="inputContentBlock inputContentBlockSecond "/>
                             </div>
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Обязанности</h2>
-                                <input placeholder="Опишите обязанности будущего сотрудника" className="inputContentBlock inputContentBlockSecond"/>
+                                <input id={"vacancy_duties"} placeholder="Опишите обязанности будущего сотрудника через запятую" className="inputContentBlock inputContentBlockSecond"/>
                             </div>
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Условия</h2>
-                                <input placeholder="Условия работы в вашей компании" className="inputContentBlock inputContentBlockSecond"/>
+                                <input id={"vacancy_conditions"} placeholder="Условия работы в вашей компании через запятую" className="inputContentBlock inputContentBlockSecond"/>
                             </div>
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Адрес</h2>
-                                <input placeholder="Например: г. Алматы, ул. Толе би, 59" className="inputContentBlock"/>
+                                <input id={"vacancy_address"} placeholder="Например: г. Алматы, ул. Толе би, 59" className="inputContentBlock"/>
                             </div>
                             <div>
-                                <button className="inputContentBtn">Опубликовать</button>
+                                <button onClick={createVacancy} className="inputContentBtn">Опубликовать</button>
                             </div>
                         </div>
                         <div className="modalAddAttention">
