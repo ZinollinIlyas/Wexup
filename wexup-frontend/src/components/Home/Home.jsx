@@ -1,4 +1,4 @@
-import React,{useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import Vacancies from "../Vacancies/Vacancies";
 import "./Home.css"
 import logo from "../images/logo-form.png";
@@ -7,7 +7,9 @@ import arrowRight from "../images/ArrowRight.svg";
 import {useForm} from "react-hook-form";
 import Footer from "../Footer/footer";
 import {UserContext} from "../../UserContext";
+import Students from "../Students/Students";
 const Home = () => {
+    const [currentUser, setCurrentUser] = useState({})
     const [show,setShow] = useState(false);
     const [show2,setShow2] = useState(false);
     const [show3,setShow3] = useState(false);
@@ -15,8 +17,35 @@ const Home = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const selectAll = watch('selectAll');
 
+        const parseJwt = token => {
+        let base64Url = token.split('.')[1];
+        let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
 
+        return JSON.parse(jsonPayload);
+    };
 
+    const get_user = async () => {
+        const access = localStorage.getItem("access");
+        if (!access) {
+            return {}
+        } else {
+            const decoded_token = parseJwt(access);
+            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
+            let data =  await response.json();
+            if (response.status === 200) {
+                setCurrentUser(data);
+            }
+        }
+    };
+
+    useEffect(() => {
+        get_user();
+    }, [])
+
+    console.log(currentUser)
     return (
         <div>
             <div className="homePage">
@@ -233,8 +262,7 @@ const Home = () => {
                 </div>
 
             </div>
-                <Vacancies/>
-
+                {currentUser.role === "students" ? <Vacancies/> : <Students/>}
             </div>
             <Footer/>
         </div>

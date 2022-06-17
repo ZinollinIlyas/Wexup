@@ -79,7 +79,7 @@ const Navbar = () => {
         console.log(currentUser.avatar)
         return (
              <div className="navbar-avatar">
-                   <a className="navbar-avatar-link">
+                   <a href={currentUser.role === "recruiter" ? `/privateOffice/Company` : ''} className="navbar-avatar-link">
                      <img src={`${currentUser.avatar}`} className="avatar-link-img"/>
                    </a>
                </div>
