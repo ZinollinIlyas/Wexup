@@ -1,0 +1,39 @@
+
+.responses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.responseContentBlock {
+     min-width: 800px;
+    min-height: 120px;
+    border: 1px solid #838080;
+    border-radius: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.responseBlockAva {
+    max-width: 80px;
+    min-height: 80px;
+    background-color: grey;
+    border-radius: 100px;
+    border: 1px solid grey;
+}
+.responseBlockName {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+.responseBlockUni {
+    font-size: 17px;
+}
+.responseResumeBtn {
+    background: #9400DA;
+    border-radius: 4px;
+    padding: 12px 30px;
+    color: #FFFFFF;
+    border: 1px solid #9400DA;
+    cursor: pointer;
+}

@@ -17,6 +17,7 @@ import VacancyContent from "./components/VacancyContent/VacancyContent";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import {UserContext} from "./UserContext";
 import VacancyPage from "./components/VacancyPage/VacancyPage";
+import Responces from "./components/Responces/Responces";
 
 
 export const App = () => {
@@ -64,6 +65,8 @@ export const App = () => {
                    </Route>
                    <Route path="/privateOffice" element={<PrivateOffice/>} />
                    <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
+                   <Route path="/responses" element={<Responces/>} />
+
                    <Route path="*" element={<ErrorPage/>}/>
                </Routes>
            </BrowserRouter>

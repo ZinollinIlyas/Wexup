@@ -95,6 +95,12 @@ const Navbar = () => {
                    Избранное
                </a>
            </div>
+            <div className="navbar-faq">
+               <a className="navbar-link"
+                  href="/responses">
+                   Отклики
+               </a>
+           </div>
             <div className="navbar-students">
                <a className="navbar-link"
                   href="/">
