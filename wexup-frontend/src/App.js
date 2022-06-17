@@ -11,9 +11,9 @@ import Home from "./components/Home/Home";
 import Career from "./components/forCareer/Career";
 import Companies from "./components/ForCompanies/Companies";
 import Faq from "./components/Faq/Faq";
-import PrivateOffice from "./PrivateOffice/PrivateOffice";
+import PrivateOffice from "./components/PrivateOffice/PrivateOffice";
 import OfficeCompany from "./components/OfficeCompany/OfficeCompany";
-import VacancyContent from "./VacancyContent/VacancyContent";
+import VacancyContent from "./components/VacancyContent/VacancyContent";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import {UserContext} from "./UserContext";
 

@@ -4,7 +4,7 @@
 }
 .vacancyContentPage {
     max-width: 1000px;
-    min-height: 1213px;
+    min-height: 713px;
     border: 1px solid #838080;
     border-radius: 15px;
     padding: 40px 25px 40px;
@@ -20,6 +20,10 @@
 .vacancyCompanyFav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+.vacancyCompanyFav img {
+    margin-right: 15px;
 }
 .vacancyCompanyImg {
     max-width: 51px;
@@ -30,19 +34,32 @@
     font-weight: 700;
     font-size: 28px;
 }
+.vacancyCompanyTerms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .vacancyTermsBlock {
     padding: 16px 19px;
     background: transparent;
     border: 1px solid #9400DA;
     border-radius: 4px;
     color: #9400DA;
+    white-space: nowrap;
 }
 .vacancyTermsBlock:not(:last-child) {
     margin-right: 37px;
+}
+.contentBodyTitle {
+    font-weight: 700;
+    font-size: 18px;
 }
 .vacancyCompanyName {
     margin-right: 42px;
 }
 .vacancyCompanyDesc {
     margin-right: 200px;
+}
+.contentBodyList li {
+    margin-bottom: 5px;
 }
