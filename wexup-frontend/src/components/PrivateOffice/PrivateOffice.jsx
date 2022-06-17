@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./PrivateOffice.css"
-import pencil from "../components/images/reductPencil.svg"
+import pencil from "../images/reductPencil.svg"
 
 
 const PrivateOffice = () => {
