@@ -26,6 +26,8 @@ class VacancyViewSet(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=HTTP_200_OK)
+        else:
+            print(serializer.errors)
 
 
 class ReadUpdateVacancyView(generics.RetrieveUpdateAPIView):

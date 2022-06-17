@@ -16,6 +16,7 @@ import OfficeCompany from "./components/OfficeCompany/OfficeCompany";
 import VacancyContent from "./components/VacancyContent/VacancyContent";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import {UserContext} from "./UserContext";
+import VacancyPage from "./components/VacancyPage/VacancyPage";
 
 
 export const App = () => {
@@ -58,7 +59,9 @@ export const App = () => {
                    <Route path="/forCareer" element={<Career/>} />
                    <Route path="/forCompanies" element={<Companies/>} />
                    <Route path="/favor" element={<Faq/>} />
-                   <Route path="/vacancyPage" element={<VacancyContent/>} />
+                   <Route path="/vacancyPage" element={<VacancyPage/>}>
+                       <Route path={":vacancy_id"} element={<VacancyContent/>}/>
+                   </Route>
                    <Route path="/privateOffice" element={<PrivateOffice/>} />
                    <Route path="/privateOffice/Company" element={<OfficeCompany/>} />
                    <Route path="*" element={<ErrorPage/>}/>

@@ -8,7 +8,7 @@ const VacancyBlock = props => {
     const [show2,setShow2] = useState(false);
     const [show3,setShow3] = useState(false);
     const navigate = useNavigate();
-    const goVacancyPage = () => navigate('/VacancyPage')
+    const goVacancyPage = () => navigate(`/VacancyPage/${props.id}`);
 
     const respondVacancy = async () => {
         setShow3(!show3)
@@ -27,8 +27,6 @@ const VacancyBlock = props => {
     const check_students = () => {
         props.students.map(student => {
             if (student.id === props.currentUser.id) {
-                console.log('asdfsad', student.id)
-                console.log('asfd', props.currentUser.id);
                 setShow3(true);
             }
         })
@@ -36,7 +34,7 @@ const VacancyBlock = props => {
 
     useEffect(() => {
         check_students();
-    }, []);
+    }, [show3]);
     return (
         <div className="vacancies">
             <div className="vacancyBlock">
