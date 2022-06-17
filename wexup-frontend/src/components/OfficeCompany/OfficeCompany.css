@@ -85,4 +85,9 @@
      font-weight: 400;
     font-size: 18px;
     color: #9400DA;
+    cursor: pointer;
+}
+.company-add-vacancy:active{
+    font-size: 15px;
+    transition-duration: 500ms;
 }

@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import "./OfficeCompany.css"
 import pencil from "../images/reductPencil.svg"
 import ModalWay from "../ModalAddWay/ModalWay";
+import ModalAddVacancy from "../ModalAddVacancy/ModalAddVacancy";
 
 
 const OfficeCompany = () => {
 
+    const [modalAddActive,setModalAddActive] = useState(false)
     const [modalActive,setModalActive] = useState(false)
     return (
         <div className="company-content">
@@ -45,12 +47,13 @@ const OfficeCompany = () => {
             <div className="company-second">
                     <div className="company-second-head">
                         <h1 className="company-second-title">Активные вакансии</h1>
-                        <a className="company-add-vacancy"> +Добавить вакансию</a>
+                        <a onClick={()=> setModalAddActive(true)} className="company-add-vacancy"> +Добавить вакансию</a>
                     </div>
             </div>
 
 
             <ModalWay active={ modalActive} setActive={setModalActive}/>
+            <ModalAddVacancy active={modalAddActive} setActive={setModalAddActive}/>
         </div>
 
     )

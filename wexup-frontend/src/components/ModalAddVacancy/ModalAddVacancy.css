@@ -1,0 +1,80 @@
+
+.modalAdd {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+.modalAdd.active {
+    transform: scale(1);
+}
+.modalAddContent {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    min-height: 200px;
+    min-width: 450px;
+    display: flex;
+}
+.modalAddTitle {
+    display: flex;
+}
+.addTitleContent {
+    margin-right: 400px;
+}
+.addTitleImg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.addContentBody {
+    display: flex;
+    justify-content: space-between;
+}
+.modalAddInputs {
+    margin-right: 20px;
+}
+.inputContentBtn {
+    background: #9400DA;
+    border-radius: 4px;
+    padding: 10px 10px;
+    color: white;
+    margin-top: 8px;
+    border: 1px solid #9400DA;
+    cursor: pointer;
+}
+.inputContentBlock {
+    min-width: 400px;
+    min-height: 30px;
+    border: 1px solid #C4C4C4;
+    font-weight: 400;
+    font-size: 12px;
+    color: #C4C4C4;
+}
+.inputContentBlockSecond {
+    padding-bottom: 50px;
+}
+.addInputTitle {
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.modalAddAttention {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.addContentAttention {
+    max-width: 210px;
+    background: #FFC700;
+    border-radius: 6px;
+    padding: 10px;
+}
