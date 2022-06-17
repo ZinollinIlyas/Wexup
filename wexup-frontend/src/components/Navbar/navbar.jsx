@@ -76,6 +76,7 @@ const Navbar = () => {
         )
     };
     const renderUserCircle = () => {
+        console.log(currentUser.avatar)
         return (
              <div className="navbar-avatar">
                    <a className="navbar-avatar-link">

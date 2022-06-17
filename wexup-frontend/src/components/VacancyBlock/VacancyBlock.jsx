@@ -11,16 +11,20 @@ const VacancyBlock = props => {
     const goVacancyPage = () => navigate(`/VacancyPage/${props.id}`);
 
     const respondVacancy = async () => {
-        setShow3(!show3)
+
         let formdata = new FormData();
-        console.log(props.id);
-        console.log(props.currentUser)
         formdata.append("students", [props.currentUser.id])
         let response = await fetch(`http://localhost:8000/api/vacancies/update/${props.id}`, {
             method: "PUT",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("access")}`
+            },
             body: formdata
         })
         let data = await response;
+        if (response.status === 200) {
+            setShow3(!show3)
+        }
         console.log(data);
     }
 

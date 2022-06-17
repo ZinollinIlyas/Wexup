@@ -15,10 +15,10 @@
     justify-content: space-around;
 }
 .responseBlockAva {
-    max-width: 80px;
-    min-height: 80px;
+    width: 80px;
+    height: 80px;
     background-color: grey;
-    border-radius: 100px;
+    border-radius: 100%;
     border: 1px solid grey;
 }
 .responseBlockName {
