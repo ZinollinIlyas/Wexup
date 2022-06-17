@@ -27,11 +27,30 @@ const Navbar = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/students/${decoded_token.user_id}`)
+            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
             let data =  await response.json();
-            setCurrentUser(data);
+            if (data.role === "student") {
+                get_student(data.id);
+            } else {
+                get_recruiter(data.id);
+            }
         }
     };
+
+    const get_student = async (id) => {
+        let response = await fetch(`http://localhost:8000/api/users/students/${id}`)
+        let data = await response.json();
+        if (response.status === 200) {
+            setCurrentUser(data);
+        }
+    }
+    const get_recruiter = async (id) => {
+        let response = await fetch(`http://localhost:8000/api/users/recruiters/${id}`)
+        let data = await response.json();
+        if (response.status === 200) {
+            setCurrentUser(data);
+        }
+    }
 
     useEffect(() => {
         get_user();

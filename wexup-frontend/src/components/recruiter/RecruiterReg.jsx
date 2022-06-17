@@ -9,6 +9,21 @@ import Modal2 from "../Modal2/Modal2";
 const RecruiterReg1 = () =>
 {
     const [modalActive2,setModalActive2] = useState(false);
+
+    const submitRecruiterRegStep1 = (e) => {
+        e.preventDefault();
+
+        const name_field = document.getElementById("recruiter_name").value;
+        const first_name = name_field.split(' ')[0];
+        const second_name = name_field.split(' ')[1];
+        const email_field = document.getElementById("recruiter_email").value;
+        const password_field = document.getElementById("recruiter_password").value;
+        localStorage.setItem("first_name", first_name);
+        localStorage.setItem("second_name", second_name);
+        localStorage.setItem("email", email_field);
+        localStorage.setItem("password", password_field);
+        window.location.replace("/recruiterReg/step2");
+    }
     return (
         <div>
             <div className={s.header}>
@@ -31,7 +46,7 @@ const RecruiterReg1 = () =>
                                 Ваше полное имя
                             </div>
                             <div className={s.nameInput}>
-                                <input placeholder="Введите ваше Имя и Фамилию" className={s.nameInputContent}/>
+                                <input id={'recruiter_name'} placeholder="Введите ваше Имя и Фамилию" className={s.nameInputContent}/>
                             </div>
                         </div>
                              <div className={s.formName}>
@@ -39,23 +54,15 @@ const RecruiterReg1 = () =>
                                     Адрес  электронной почты
                                 </div>
                                 <div className={s.nameInput}>
-                                    <input placeholder="Введите ваше адрес элетронной почты" className={s.nameInputContent}/>
+                                    <input id={'recruiter_email'} placeholder="Введите ваше адрес элетронной почты" className={s.nameInputContent}/>
                                 </div>
                              </div>
-                          <div className={s.formName}>
-                            <div className={s.nameDesc}>
-                                Адрес рабоочей электронной почты(не обязательно)
-                            </div>
-                            <div className={s.nameInput}>
-                                <input placeholder="Введите ваше адрес элетронной почты" className={s.nameInputContent}/>
-                            </div>
-                        </div>
                         <div className={s.formName}>
                             <div className={s.nameDesc}>
                                 Пароль
                             </div>
                             <div className={s.nameInput}>
-                                <input type="password" placeholder="Введите пароль" className={s.nameInputContent}/>
+                                <input id={'recruiter_password'} type="password" placeholder="Введите пароль" className={s.nameInputContent}/>
                             </div>
                         </div>
                         <div className={s.formBtns}>
@@ -65,7 +72,7 @@ const RecruiterReg1 = () =>
                                 </a>
                             </div>
                             <div className={s.secondButton}>
-                                    <a href="/recruiterReg/step2" className={s.secondButtonContent}>
+                                    <a onClick={submitRecruiterRegStep1} className={s.secondButtonContent}>
                                         ДАЛЕЕ
                                     </a>
                             </div>

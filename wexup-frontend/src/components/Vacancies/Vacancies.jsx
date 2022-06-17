@@ -8,7 +8,6 @@ import {get} from "react-hook-form";
 const Vacancies = () => {
     const [vacancies, setVacancies] = useState([]);
     const [currentUser, setCurrentUser] = useState({})
-    const [vacancyToRespond, setVacancyToRespond] = useState(0)
 
 
     useEffect(() => {
@@ -16,7 +15,6 @@ const Vacancies = () => {
         .then(res => res.status === 200 ? res.json() : "")
         .then(data => setVacancies(data));
     }, [])
-    console.log(vacancies)
 
 
 
@@ -36,27 +34,33 @@ const Vacancies = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/students/${decoded_token.user_id}`)
+            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
             let data =  await response.json();
-            setCurrentUser(data);
+            if (data.role === "student") {
+                get_student(data.id);
+            } else {
+                get_recruiter(data.id);
+            }
         }
     };
+
+    const get_student = async (id) => {
+        let response = await fetch(`http://localhost:8000/api/users/students/${id}`)
+        let data = await response.json();
+        if (response.status === 200) {
+            setCurrentUser(data);
+        }
+    }
+    const get_recruiter = async (id) => {
+        let response = await fetch(`http://localhost:8000/api/users/recruiters/${id}`)
+        let data = await response.json();
+        if (response.status === 200) {
+            setCurrentUser(data);
+        }
+    }
     useEffect(() => {
         get_user()
     }, [])
-    console.log(currentUser);
-
-    const respondVacancy = async () => {
-        let formdata = new FormData();
-        console.log(vacancyToRespond);
-        formdata.append("students", [currentUser.id])
-        let response = await fetch(`http://localhost:8000/api/vacancies/update/${vacancyToRespond}`, {
-            method: "PUT",
-            body: formdata
-        })
-        let data = await response;
-        console.log(data);
-    }
 
     return (
         <div>

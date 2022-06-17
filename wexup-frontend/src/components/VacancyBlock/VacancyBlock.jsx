@@ -9,11 +9,6 @@ const VacancyBlock = props => {
     const [show3,setShow3] = useState(false);
     const navigate = useNavigate();
     const goVacancyPage = () => navigate('/VacancyPage')
-    const respond_to_vacancy = () => {
-        setShow3(!show3)
-        props.respond();
-        props.setVacancyToRespond(props.id)
-    };
 
     const respondVacancy = async () => {
         setShow3(!show3)
@@ -41,7 +36,7 @@ const VacancyBlock = props => {
 
     useEffect(() => {
         check_students();
-    }, [show3]);
+    }, []);
     return (
         <div className="vacancies">
             <div className="vacancyBlock">

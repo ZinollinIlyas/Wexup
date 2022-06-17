@@ -34,7 +34,7 @@ const Registration3 = () =>
             },
             body: formData
         }
-        let response = await fetch("http://localhost:8000/api/students/", options);
+        let response = await fetch("http://localhost:8000/api/users/students/", options);
         let data = await response.json();
         if (response.status === 200) {
             console.log(data);
