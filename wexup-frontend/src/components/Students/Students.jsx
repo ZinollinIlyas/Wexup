@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react"
-import "./Students.css"
 import vector from "../images/Vector.svg";
 import Banner from "../BannerAdvertisement/Banner";
 import VacancyBlock from "../VacancyBlock/VacancyBlock";
