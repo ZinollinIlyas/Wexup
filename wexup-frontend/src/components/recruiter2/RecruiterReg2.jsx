@@ -34,14 +34,14 @@ const RecruiterReg2 = () =>
             },
             body: formdata
         }
-        let response = await fetch("http://localhost:8000/api/users/recruiters/", options);
+        let response = await fetch("http://127.0.0.1:8000/api/users/recruiters/", options);
         let data = await response.json();
         if (response.status === 200) {
             console.log(data);
             let another_formData = new FormData();
             another_formData.append("email", data.email)
             another_formData.append("password", localStorage.getItem("password"))
-            let another_response = await fetch("http://localhost:8000/api/token/", {
+            let another_response = await fetch("http://127.0.0.1:8000/api/token/", {
                 method: "POST",
                 header: {
                 "Content-Type": "application/json"
