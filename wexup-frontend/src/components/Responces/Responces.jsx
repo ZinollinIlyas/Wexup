@@ -61,6 +61,7 @@ const Responces = () => {
                                 <div className="responseDesc">
                                     <h3 className="responseBlockName">{student.second_name} {student.first_name}</h3>
                                     <div className="responseBlockUni">{student.university}</div>
+                                    <a href={`mailto:${student.email}`}>{student.email}</a>
                                 </div>
                                 <div className="responseResume">
                                     <a href={`http://localhost:8000${student.resume}`} className="responseResumeBtn" target={"_blank"}>Резюме</a>

@@ -20,7 +20,7 @@ const Registration3 = () =>
         formData.append("email", localStorage.getItem("email"));
         formData.append("password", localStorage.getItem("password"));
         formData.append("role", "student");
-        formData.append("university", localStorage.getItem("password"));
+        formData.append("university", localStorage.getItem("university"));
         formData.append("city", localStorage.getItem("city"));
         formData.append("study_period", localStorage.getItem("study_period"));
         formData.append("specialty", localStorage.getItem("specialty"));

@@ -11,7 +11,7 @@ const Vacancies = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/vacancies/', {crossDomain:true,method: "GET",mode: 'cors', header: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}})
+        fetch('http://127.0.0.1:8000/api/vacancies/', {crossDomain:true,method: "GET",mode: 'cors', header: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}})
         .then(res => res.status === 200 ? res.json() : "")
         .then(data => setVacancies(data));
     }, [])
