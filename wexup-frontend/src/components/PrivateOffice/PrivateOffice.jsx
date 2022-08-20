@@ -16,7 +16,7 @@ const PrivateOffice = () => {
 
     })
     function aboutMe () {
-        fetch('http://localhost:8000/api/profile/', {method:"POST",data})
+        fetch(`http://${process.env.REACT_APP_API_URL}/api/profile/`, {method:"POST",data})
     }
     function makeInput() {
         const textArea =document.createElement('input')

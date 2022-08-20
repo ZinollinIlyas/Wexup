@@ -14,7 +14,7 @@ const VacancyBlock = props => {
 
         let formdata = new FormData();
         formdata.append("students", [props.currentUser.id])
-        let response = await fetch(`http://localhost:8000/api/vacancies/update/${props.id}`, {
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/update/${props.id}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("access")}`

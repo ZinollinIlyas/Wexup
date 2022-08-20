@@ -28,7 +28,7 @@ const OfficeCompany = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
+            let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/${decoded_token.user_id}`)
             let data =  await response.json();
             setCurrentUser(data);
         }

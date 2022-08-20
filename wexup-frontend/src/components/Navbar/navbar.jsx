@@ -27,7 +27,7 @@ const Navbar = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
+            let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/${decoded_token.user_id}`)
             let data =  await response.json();
             if (data.role === "student") {
                 get_student(data.id);
@@ -38,14 +38,14 @@ const Navbar = () => {
     };
 
     const get_student = async (id) => {
-        let response = await fetch(`http://localhost:8000/api/users/students/${id}`)
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/students/${id}`)
         let data = await response.json();
         if (response.status === 200) {
             setCurrentUser(data);
         }
     }
     const get_recruiter = async (id) => {
-        let response = await fetch(`http://localhost:8000/api/users/recruiters/${id}`)
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/recruiters/${id}`)
         let data = await response.json();
         if (response.status === 200) {
             setCurrentUser(data);

@@ -20,7 +20,7 @@ const VacancyContent = () => {
     const {vacancy_id} = useParams();
 
     const get_vacancy = async () => {
-      let response = await fetch(`http://localhost:8000/api/vacancies/${vacancy_id}`);
+      let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/${vacancy_id}`);
       let data = await response.json();
       if (response.status === 200) {
           setVacancy(data);

@@ -34,14 +34,14 @@ const Registration3 = () =>
             },
             body: formData
         }
-        let response = await fetch("http://localhost:8000/api/users/students/", options);
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/students/`, options);
         let data = await response.json();
         if (response.status === 200) {
             console.log(data);
             let another_formData = new FormData();
             another_formData.append("email", data.email)
             another_formData.append("password", localStorage.getItem("password"))
-            let another_response = await fetch("http://localhost:8000/api/token/", {
+            let another_response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/token/`, {
                 method: "POST",
                 header: {
                 "Content-Type": "application/json"

@@ -22,7 +22,7 @@ const Modal2 = ({active,setActive}) => {
         formdata.append("email", email);
         formdata.append("password", password);
 
-        const response = await fetch("http://localhost:8000/api/token/", {
+        const response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/token/`, {
             method: "POST",
             body: formdata
         })

@@ -32,7 +32,7 @@ const StudentsBlock = props => {
                         <img src={heart2}/>
                     </div>
                     <div className="vacanciesButton">
-                        <a href={`http://localhost:8000${props.resume}`} className="vacancyBtn" > Резюме </a>
+                        <a href={`http://${process.env.REACT_APP_API_URL}${props.resume}`} className="vacancyBtn" > Резюме </a>
                     </div>
                 </div>
             </div>

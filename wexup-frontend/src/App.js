@@ -39,7 +39,7 @@ export const App = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/users/students/${decoded_token.user_id}`)
+            let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/students/${decoded_token.user_id}`)
             let data =  await response.json();
             console.log(data)
         }

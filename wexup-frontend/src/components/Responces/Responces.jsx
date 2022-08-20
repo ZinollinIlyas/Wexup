@@ -23,14 +23,14 @@ const Responces = () => {
             return {}
         } else {
             const decoded_token = parseJwt(access);
-            let response = await fetch(`http://localhost:8000/api/users/${decoded_token.user_id}`)
+            let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/${decoded_token.user_id}`)
             let data =  await response.json();
             setCurrentUser(data);
         }
     };
 
     const get_vacancies = async () => {
-        let response = await fetch("http://localhost:8000/api/vacancies/")
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/`)
         let data = await response.json();
         if (response.status === 200) {
             setVacancies(data.filter(vacancy => vacancy.recruiter === current_user.id))
@@ -57,14 +57,14 @@ const Responces = () => {
                         </h1>
                         {vacancy.students.map(student => (
                             <div key={student.id} className="responseContentBlock">
-                                <img src={`http://localhost:8000${student.avatar}`} className="responseBlockAva"/>
+                                <img src={`http://${process.env.REACT_APP_API_URL}${student.avatar}`} className="responseBlockAva"/>
                                 <div className="responseDesc">
                                     <h3 className="responseBlockName">{student.second_name} {student.first_name}</h3>
                                     <div className="responseBlockUni">{student.university}</div>
                                     <a href={`mailto:${student.email}`}>{student.email}</a>
                                 </div>
                                 <div className="responseResume">
-                                    <a href={`http://localhost:8000${student.resume}`} className="responseResumeBtn" target={"_blank"}>Резюме</a>
+                                    <a href={`http://${process.env.REACT_APP_API_URL}${student.resume}`} className="responseResumeBtn" target={"_blank"}>Резюме</a>
                                 </div>
                             </div>
                         ))}

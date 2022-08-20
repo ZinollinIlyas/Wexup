@@ -27,7 +27,7 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
         formdata.append("address", address);
         formdata.append("recruiter", current_user.id)
 
-        let response = await fetch("http://localhost:8000/api/vacancies/", {
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('access')}`

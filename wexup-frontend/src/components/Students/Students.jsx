@@ -9,7 +9,7 @@ const Students = () => {
     const [students, setStudents] = useState([]);
 
     const get_students = async () => {
-      let response = await fetch("http://localhost:8000/api/users/students/")
+      let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/students/`)
       let data = await response.json();
       if (response.status === 200) {
           setStudents(data);
