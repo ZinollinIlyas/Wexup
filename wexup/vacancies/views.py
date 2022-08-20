@@ -13,7 +13,7 @@ from oauth.models import Student
 
 
 class VacancyViewSet(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowAny]
     parser_classes = [MultiPartParser, FormParser]
 
     def get(self, request):
