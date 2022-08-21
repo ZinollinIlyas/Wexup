@@ -28,6 +28,7 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
         formdata.append("address", address);
         formdata.append("recruiter", current_user.id)
         formdata.append("contact", contact)
+        console.log(contact)
 
         let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/`, {
             method: "POST",
@@ -37,9 +38,12 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
             body: formdata,
         })
         let data = await response.json();
+        console.log(data)
         if (response.status === 200) {
             console.log(data);
             setActive(false);
+        } else {
+            console.log("dasfas")
         }
     }
 

@@ -34,7 +34,7 @@ const RecruiterReg2 = () =>
             },
             body: formdata
         }
-        let response = await fetch(`http://${process.env.REACT_APP_API_URL}:8000/api/users/recruiters/`, options);
+        let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/users/recruiters/`, options);
         let data = await response.json();
         if (response.status === 200) {
             console.log(data);
