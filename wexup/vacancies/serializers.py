@@ -26,7 +26,9 @@ class VacancyListSerializer(serializers.ModelSerializer):
             duties=validated_data["duties"],
             requirements=validated_data["requirements"],
             conditions=validated_data["conditions"],
-            company=validated_data["company"]
+            company=validated_data["company"],
+            address=validated_data["address"],
+            contact=validated_data["contact"]
         )
         vacancy.save()
         recruiter.vacancies.add(vacancy)

@@ -73,3 +73,4 @@ class Recruiter(CustomUser):
     favored_roles = models.CharField(blank=True, null=True, max_length=200, verbose_name='favored roles')
     company = models.CharField(max_length=60, blank=True, null=True, verbose_name='company')
     position = models.CharField(max_length=60, blank=True, null=True, verbose_name='position')
+    avatar = models.ImageField(blank=True, null=True, upload_to='images/')

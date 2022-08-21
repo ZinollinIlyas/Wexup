@@ -43,6 +43,7 @@ class RecruiterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recruiter
         fields = "__all__"
+        extra_kwargs = {"email": {"required": False}, "password": {"required": False}, "first_name": {"required": False}, "second_name": {"required": False}}
 
     def create(self, validated_data):
         print(validated_data)
@@ -59,3 +60,16 @@ class RecruiterSerializer(serializers.ModelSerializer):
 
         recruiter.save()
         return recruiter
+
+    def update(self, instance, validated_data, pk=None):
+        print(validated_data)
+        # custom_user = serializers.PrimaryKeyRelatedField(read_only=False, many=True, queryset=CustomUser.objects.get(pk=pk))
+        print(validated_data)
+        instance.email = validated_data.get("email", instance.email)
+        instance.favored_roles = validated_data.get("favored_roles", instance.favored_roles)
+        instance.company = validated_data.get("company", instance.company)
+        instance.position = validated_data.get("position", instance.position)
+        instance.avatar = validated_data.get("avatar", instance.avatar)
+
+        instance.save()
+        return instance

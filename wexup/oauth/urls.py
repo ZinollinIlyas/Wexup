@@ -12,6 +12,7 @@ urlpatterns = [
     path('recruiters/', RecruiterViewSet.as_view()),
     path('<int:pk>', UserRetrieveView.as_view()),
     path('students/<int:pk>', StudentRetrieveView.as_view()),
-    path('recruiters/<int:pk>', RecruiterRetrieveView.as_view())
+    path('recruiters/<int:pk>', RecruiterRetrieveView.as_view()),
+    path('recruiters/update/<int:pk>', RecruiterViewSet.as_view())
 ]
 

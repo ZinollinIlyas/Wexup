@@ -14,3 +14,4 @@ class Vacancy(models.Model):
     company = models.CharField(max_length=50, null=True, blank=True, verbose_name="company")
     recruiter = models.ForeignKey(Recruiter, on_delete=models.CASCADE, null=True, blank=True, related_name="vacancies")
     students = models.ManyToManyField(Student, blank=True)
+    contact = models.CharField(max_length=20, null=True, blank=True, verbose_name='contact')

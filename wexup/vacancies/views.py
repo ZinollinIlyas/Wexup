@@ -1,15 +1,13 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny, IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
+
+import bot_worker
 from .serializers import VacancyListSerializer, VacancySerializer, VacancyUpdateSerializer
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from .models import Vacancy
-from django.views.generic import TemplateView
-
-from oauth.models import Student
 
 
 class VacancyViewSet(APIView):
@@ -17,7 +15,7 @@ class VacancyViewSet(APIView):
     parser_classes = [MultiPartParser, FormParser]
 
     def get(self, request):
-        students = Vacancy.objects.all()
+        students = Vacancy.objects.order_by("-id")
         serializer = VacancyListSerializer(students, many=True)
         return Response(serializer.data)
 
@@ -25,6 +23,7 @@ class VacancyViewSet(APIView):
         serializer = VacancyListSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            bot_worker.send_message_to_channel(serializer.data)
             return Response(serializer.data, status=HTTP_200_OK)
         else:
             print(serializer.errors)
