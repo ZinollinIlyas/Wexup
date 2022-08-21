@@ -39,4 +39,4 @@ def send_message_to_channel(message):
 
 
 '''
-    bot.send_message(-1001254732824, text, parse_mode="html")
+    bot.send_message(-1001378290415, text, parse_mode="html")
