@@ -16,6 +16,7 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
         const duties = document.getElementById("vacancy_duties").value;
         const conditions = document.getElementById("vacancy_conditions").value;
         const address = document.getElementById("vacancy_address").value;
+        const contact = document.getElementById("vacancy_contact").value
         let formdata = new FormData();
         formdata.append("title", title);
         formdata.append("company", company)
@@ -26,6 +27,7 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
         formdata.append("conditions", conditions);
         formdata.append("address", address);
         formdata.append("recruiter", current_user.id)
+        formdata.append("contact", contact)
 
         let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/`, {
             method: "POST",
@@ -83,6 +85,10 @@ const ModalAddVacancy = ({active,setActive, current_user}) => {
                             <div className="addContentInput">
                                 <h2 className="addInputTitle">Адрес</h2>
                                 <input id={"vacancy_address"} placeholder="Например: г. Алматы, ул. Толе би, 59" className="inputContentBlock"/>
+                            </div>
+                            <div className="addContentInput">
+                                <h2 className="addInputTitle">Контакты</h2>
+                                <input id={"vacancy_contact"} placeholder="Телефон или почтовый адрес" className="inputContentBlock"/>
                             </div>
                             <div>
                                 <button onClick={createVacancy} className="inputContentBtn">Опубликовать</button>

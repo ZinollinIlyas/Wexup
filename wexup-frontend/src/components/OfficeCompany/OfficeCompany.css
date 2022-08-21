@@ -15,11 +15,22 @@
     border-bottom: 1px solid #C4C4C4;
 }
 .company-profile-photo{
-    margin-right: 33px;
-    border-radius: 150px;
-    border: 1px solid grey;
-    max-width: 138px;
-    min-height: 138px;
+    margin-top: 60px;
+    outline: hidden;
+    margin-left: 20px;
+}
+.comapany-photo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.company-head-img{
+    border: 1px grey solid;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
 }
 .company-head-desc {
     margin-right: 149px;
@@ -41,6 +52,7 @@
     font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
+    cursor: pointer;
 }
 .body-company a {
     font-weight: 400;
@@ -76,7 +88,7 @@
     position: absolute;
 }
 .company-second{
-    min-width: 418px;
+    width: 418px;
     padding: 70px 30px;
     border: 1px solid #838080;
     border-radius: 15px;
@@ -86,6 +98,12 @@
     font-size: 18px;
     color: #9400DA;
     cursor: pointer;
+}
+.vacancy_mini {
+    width: 350px;
+}
+.vacancy_button_mini {
+    width: 120px;
 }
 .company-add-vacancy:active{
     font-size: 15px;

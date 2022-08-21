@@ -13,7 +13,7 @@ const VacancyBlock = props => {
     const respondVacancy = async () => {
 
         let formdata = new FormData();
-        formdata.append("students", [props.currentUser.id])
+        formdata.append("students", props.currentUser.id)
         let response = await fetch(`http://${process.env.REACT_APP_API_URL}/api/vacancies/update/${props.id}`, {
             method: "PUT",
             headers: {
@@ -41,7 +41,7 @@ const VacancyBlock = props => {
     }, [show3]);
     return (
         <div className="vacancies">
-            <div className="vacancyBlock">
+            <div className="vacancyBlock vacancy_mini">
                 <div  onClick={goVacancyPage} className="vacancyFirst">
                     <div className="vacancyTitleContent">
                             <h2 className="vacancyTitle">{props.title}</h2>
@@ -74,7 +74,7 @@ const VacancyBlock = props => {
                         {
                             show3 ?
                                 <button onClick={()=> setShow3(show3)}  className="vacancyBtnSecond"> Вы откликнулись!</button>:
-                                <button onClick={respondVacancy} className="vacancyBtn" > Откликнуться </button>
+                                <button onClick={respondVacancy} className="vacancyBtn vacancy_button_mini" > Откликнуться </button>
                                     }
                     </div>
                 </div>

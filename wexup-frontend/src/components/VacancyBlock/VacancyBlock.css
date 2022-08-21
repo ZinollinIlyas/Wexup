@@ -9,11 +9,12 @@
 }
 .vacancyBlock {
     display: flex;
+    position: relative;
     justify-content: space-between;
     padding: 24px 48px 24px 76px;
     margin-top: 50px;
     margin-bottom: 30px;
-    min-width: 700px;
+    min-width: 75%;
     max-height: 117px;
     border: 1px solid #838080;
     border-radius: 66px;

@@ -62,6 +62,7 @@ const VacancyContent = () => {
                 </div>
                 <div className="vacancyContentBody">
                     <div className="contentBodyBlock">
+                        <p><span className="contentBodyTitle">Оклад:</span> {vacancy.wage} тг</p>
                         <h2 className="contentBodyTitle">Требования:</h2>
                         <ul className="contentBodyList">
                             {requirements.map(requirement => (

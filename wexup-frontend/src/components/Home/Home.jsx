@@ -263,7 +263,7 @@ const Home = () => {
                 </div>
 
             </div>
-                {currentUser.role === "students" || currentUser ? <Vacancies/> : <Students/>}
+                {currentUser.role === "recruiter" ? <Students/>  : <Vacancies/>}
             </div>
             <Footer/>
         </div>
